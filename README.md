@@ -129,7 +129,7 @@ If you use MARIE 3.0, please cite:
 
 ## 💬 **Acknowledgments**
 
-This work is actively supported in part by **NIH K99 EB035163**, **R01 EB036483**, **R01 EB024536**, and **CPRIT RR180056**, and performed under the **Center for Advanced Imaging Innovation and Research (CAI²R)** — an NIH P41 National Center for Biomedical Imaging and Bioengineering (P41 EB017183).
+This work is actively supported in part by **NIH K99 EB035163**, **R01 EB036483**, and **R01 EB024536**, and performed under the **Center for Advanced Imaging Innovation and Research (CAI²R)** — an NIH P41 National Center for Biomedical Imaging and Bioengineering (P41 EB017183).
 
 ---
 
