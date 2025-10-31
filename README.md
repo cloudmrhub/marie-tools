@@ -157,13 +157,15 @@ Center for Biomedical Imaging, NYU Grossman School of Medicine
 
 **Alexandra Tambova, PhD**, Industry
 
-**Jorge F. Villena, PhD**, Industry
+**Mikhail S. Litsarev, PhD**, Industry
 
-**Athanasios G. Polimeridis, PhD**, Industry
+**Jorge F. Villena, PhD**, Industry
 
 **Luca Daniel, PhD**, Electrical Engineering and Computer Science, Massachusetts Institute of Technology
 
 **Jacob K. White, PhD**, Electrical Engineering and Computer Science, Massachusetts Institute of Technology
+
+**Athanasios G. Polimeridis, PhD**, Industry
 
 **Riccardo Lattanzi, PhD**, Center for Biomedical Imaging, NYU Grossman School of Medicine
 
