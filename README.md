@@ -69,7 +69,7 @@ doc/
 3. Clone the repository and initialize:
 
    ```bash
-   git clone https://github.com/GiannakopoulosIlias/MARIE.git
+   git clone https://github.com/cloudmrhub/marie-tools
    cd MARIE
    ```
 4. From MATLAB to install all c++ accelerated assembly routines
@@ -88,7 +88,7 @@ doc/
 ---
 
 ## ⚠️ **Disclaimer**
-This is an in-house electromagnetic simulator suire and it is intended for research purposes. While every effort has been made to ensure its quality, the code may (or for sure will) contain bugs. We do not assume responsibility for any errors or issues resulting from the software's use. We strongly encourage the users to post any errors, warnings, questions, etc, in the Issues page, or send directly to the corresponding authors.
+This is an in-house electromagnetic simulator suire and it is intended for research purposes. While every effort has been made to ensure its quality, the code may contain bugs. We do not assume responsibility for any errors or issues resulting from the software's use. We strongly encourage the users to post any errors, warnings, questions, etc, in the Issues page, or send directly to the corresponding authors.
 
 ---
 
@@ -113,6 +113,7 @@ If you use MARIE 3.0, please cite:
 
 ### Papers used in MARIE (please cite explicitly if needed)
 1. **Piecewise-constant approximation of VIE**: Polimeridis, Athanasios G., et al. "Stable FFT-JVIE solvers for fast analysis of highly inhomogeneous dielectric objects." Journal of Computational Physics 269 (2014): 280-296.
+2. **Power Calculations**: Polimeridis, Athanasios G., et al. "On the computation of power in volume integral equation formulations." IEEE Transactions on Antennas and Propagation 63.2 (2014): 611-620.
 2. **MARIE**: Villena, Jorge Fernandez, et al. "MARIE–a MATLAB-based open source software for the fast electromagnetic analysis of MRI systems." Proceedings of the 23rd Annual Meeting of ISMRM, Toronto, Canada. 2015.
 3. **Magnetic Resonance Green's function**: Villena, Jorge Fernández, et al. "Fast electromagnetic analysis of MRI transmit RF coils based on accelerated integral equation methods." IEEE Transactions on Biomedical Engineering 63.11 (2016): 2250-2261.
 4. **Evaluation of Signular Integrals**: Tambova, Alexandra A., et al. "On the generalization of DIRECTFN for singular integrals over quadrilateral patches." IEEE Transactions on Antennas and Propagation 66.1 (2017): 304-314.
@@ -124,12 +125,14 @@ If you use MARIE 3.0, please cite:
 10. **Tensor Train-based SVIE**: Giannakopoulos, Ilias I., et al. "A tensor train compression scheme for remote volume-surface integral equation interactions." 2021 International Applied Computational Electromagnetics Society Symposium (ACES). IEEE, 2021.
 11. **Ultimate Electromagnetic Basis and Ultimate SNR**: Georgakis, Ioannis P., et al. "Novel numerical basis sets for electromagnetic field expansion in arbitrary inhomogeneous objects." IEEE transactions on antennas and propagation 70.9 (2022): 8227-8241.
 12. **Hybrid cross-Tensor Train and Precorrected Fast Fourier Transform-based SVIE**: Giannakopoulos, Ilias I., et al. "A hybrid volume-surface integral equation method for rapid electromagnetic simulations in MRI." IEEE Transactions on Biomedical Engineering 70.1 (2022): 105-114.
-13. **MARIE 2.0**: Guryev, Georgy D., et al. "MARIE 2.0: a perturbation matrix based patient-specific MRI field simulator." IEEE Transactions on Biomedical Engineering 70.5 (2022): 1575-1586.
+13. **Perturbation Matrix-based SVIE**: Guryev, Georgy D., et al. "MARIE 2.0: a perturbation matrix based patient-specific MRI field simulator." IEEE Transactions on Biomedical Engineering 70.5 (2022): 1575-1586.
 14. **Ideal Current Patterns**: Giannakopoulos, Ilias I., et al. "Computational methods for the estimation of ideal current patterns in realistic human models." Magnetic resonance in medicine 91.2 (2024): 760-772.
+15. **Subtraction Method**: Cruz Serrallés, J. E., Giannakopoulos, I. I. and Lattanzi, R. (2024). On the Extension of MARIE Coil Simulation to Low Frequencies and Arbitrarily Fine Meshes. In
+Proceedings of the 32nd Annual Meeting of ISMRM, Singapore (p. 2843).
 
 ## 💬 **Acknowledgments**
 
-This work is actively supported in part by **NIH K99 EB035163**, **R01 EB036483**, and **R01 EB024536**, and performed under the **Center for Advanced Imaging Innovation and Research (CAI²R)** — an NIH P41 National Center for Biomedical Imaging and Bioengineering (P41 EB017183).
+This work is currently supported in part by **NIH K99 EB035163**, **R01 EB036483**, and **R01 EB024536**, and performed under the **Center for Advanced Imaging Innovation and Research (CAI²R)** — an NIH P41 National Center for Biomedical Imaging and Bioengineering (P41 EB017183).
 
 ---
 
