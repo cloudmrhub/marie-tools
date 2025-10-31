@@ -1,0 +1,11 @@
+{
+  "B0": 7.0,
+  "Basis_Functions_VIE": 0,
+  "BodyFile": "RHBM/5mm/Duke_Body_7T.mat",
+  "CoilFile": "",
+  "WireFile": "Prostate_Receivers/Prostate_Array_16.msh",
+  "ShieldFile": "",
+  "SurfaceBasisSupportFile": "",
+  "TMD": 1,
+  "BasisFile": "Duke_body_5mm_PWC_7T.mat"
+}

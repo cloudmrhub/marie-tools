@@ -1,0 +1,88 @@
+{
+  "coil_configuration": {
+    "name": "Head_Receive_Array_1_Coil.json",
+    "tmd": "false",
+    "elements": [
+      {
+        "number": 1,
+        "type": "port",
+        "load": "capacitorParallel_inductorSeries_capacitorParallel",
+        "value": [
+          1.340030083905819E-12,
+          1.0633202007170455E-9,
+          3.7342380149526933E-11
+        ],
+        "optim": {
+          "boolean": 1,
+          "minim": [
+            1.34E-12,
+            1E-9,
+            1.34E-12
+          ],
+          "maxim": [
+            1.34E-10,
+            1E-7,
+            1.34E-10
+          ],
+          "symmetry": 1
+        },
+        "cross_talk": {},
+        "excitation": {
+          "entity": 1,
+          "TxRx": "Rx"
+        }
+      },
+      {
+        "number": 2,
+        "type": "element",
+        "load": "capacitor",
+        "value": 1.9731012256015886E-12,
+        "optim": {
+          "boolean": 1,
+          "minim": 5.02E-12,
+          "maxim": 5.02E-10,
+          "symmetry": 2
+        },
+        "cross_talk": {},
+        "excitation": {
+          "entity": 1,
+          "TxRx": "Rx"
+        }
+      },
+      {
+        "number": 3,
+        "type": "element",
+        "load": "capacitor",
+        "value": 1.9731012256015886E-12,
+        "optim": {
+          "boolean": 1,
+          "minim": 5.02E-12,
+          "maxim": 5.02E-10,
+          "symmetry": 2
+        },
+        "cross_talk": {},
+        "excitation": {
+          "entity": 1,
+          "TxRx": "Rx"
+        }
+      },
+      {
+        "number": 4,
+        "type": "element",
+        "load": "capacitor",
+        "value": 1.9731012256015886E-12,
+        "optim": {
+          "boolean": 1,
+          "minim": 5.02E-12,
+          "maxim": 5.02E-10,
+          "symmetry": 2
+        },
+        "cross_talk": {},
+        "excitation": {
+          "entity": 1,
+          "TxRx": "Rx"
+        }
+      }
+    ]
+  }
+}

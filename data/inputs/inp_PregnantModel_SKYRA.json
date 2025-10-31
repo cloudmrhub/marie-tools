@@ -1,0 +1,11 @@
+{
+  "B0": 2.9170,
+  "Basis_Functions_VIE": 1,
+  "BodyFile": "RHBM/4mm/Pregnant_Fetal_Models/v2_Pregnant_model_3T_1.mat",
+  "CoilFile": "",
+  "WireFile": "",
+  "ShieldFile": "SKYRA_Coil/SKYRA_Coil_Shielded.msh",
+  "SurfaceBasisSupportFile": "",
+  "TMD": 0,
+  "BasisFile": "Pregnant_Fetal_model_3T_0_4mm_PWL_3T.mat"
+}
