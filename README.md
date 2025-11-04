@@ -111,7 +111,7 @@ If you use MARIE 3.0, please cite:
 
 ---
 
-### Papers used in MARIE (please cite explicitly if needed)
+### Papers on MARIE (please cite explicitly if needed)
 1. **Piecewise-constant approximation of VIE**: Polimeridis, Athanasios G., et al. "Stable FFT-JVIE solvers for fast analysis of highly inhomogeneous dielectric objects." Journal of Computational Physics 269 (2014): 280-296.
 2. **Power Calculations**: Polimeridis, Athanasios G., et al. "On the computation of power in volume integral equation formulations." IEEE Transactions on Antennas and Propagation 63.2 (2014): 611-620.
 2. **MARIE**: Villena, Jorge Fernandez, et al. "MARIE–a MATLAB-based open source software for the fast electromagnetic analysis of MRI systems." Proceedings of the 23rd Annual Meeting of ISMRM, Toronto, Canada. 2015.
@@ -127,8 +127,6 @@ If you use MARIE 3.0, please cite:
 12. **Hybrid cross-Tensor Train and Precorrected Fast Fourier Transform-based SVIE**: Giannakopoulos, Ilias I., et al. "A hybrid volume-surface integral equation method for rapid electromagnetic simulations in MRI." IEEE Transactions on Biomedical Engineering 70.1 (2022): 105-114.
 13. **Perturbation Matrix-based SVIE**: Guryev, Georgy D., et al. "MARIE 2.0: a perturbation matrix based patient-specific MRI field simulator." IEEE Transactions on Biomedical Engineering 70.5 (2022): 1575-1586.
 14. **Ideal Current Patterns**: Giannakopoulos, Ilias I., et al. "Computational methods for the estimation of ideal current patterns in realistic human models." Magnetic resonance in medicine 91.2 (2024): 760-772.
-15. **Subtraction Method**: Cruz Serrallés, J. E., Giannakopoulos, I. I. and Lattanzi, R. (2024). On the Extension of MARIE Coil Simulation to Low Frequencies and Arbitrarily Fine Meshes. In
-Proceedings of the 32nd Annual Meeting of ISMRM, Singapore (p. 2843).
 
 ## 💬 **Acknowledgments**
 
