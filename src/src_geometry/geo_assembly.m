@@ -26,7 +26,7 @@ function [MREDM] = geo_assembly(MREDM,geo_flag)
             MREDM.dimensions.N_shield_sie = max(MREDM.SIE.shield.index);
         else
             MREDM.SIE.shield              = [];
-            MREDM.WIE.shield_RLC          = [];
+            MREDM.SIE.shield_RLC          = [];
         end
         if ~isempty(inp.coil) && isempty(inp.wire)
             coil_file                     = fullfile('./data/coils/coil_files',inp.coil);
