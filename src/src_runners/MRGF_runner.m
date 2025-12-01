@@ -45,17 +45,23 @@
 %   - The MRGF runner assumes that the EM basis and operator compression
 %     matrices are already generated and stored in the input .mat file.
 
+function MRGF_runner(input_file)
+
 % ---------------------------------------------------------------
 % STEP 0: Initialize Environment
 % ---------------------------------------------------------------
 close all
-clearvars
 clc
 
 % ---------------------------------------------------------------
 % STEP 1: Specify Input File
 % ---------------------------------------------------------------
-input_file = 'inp_Duke_StadiumTriangular.txt';  % Input file name
+% Parse command-line arguments
+if nargin < 1 || ~isfile(input_file)
+    fprintf('[ERROR] Usage: MARIE_runner(''input_file.json'')\n');
+    fprintf('[ERROR] Example: MARIE_runner(''./data/inputs/inp_Duke_StadiumTriangular.json'')\n');
+    error('MARIE:FileNotFound', 'Valid input file is required. Exiting.');
+end
 
 % ---------------------------------------------------------------
 % STEP 2: Load Inputs
@@ -119,10 +125,12 @@ MREDM = em_ehfield_wsvie_mrgf(MREDM, Ue, Ub);  % Compute EM fields, SNR, TXE
 fprintf('Storing Fields ...\n');
 solution = MREDM.fields;
 
+[~, file_name, ext] = fileparts(input_file);
 save(fullfile('./data/solutions/', ...
-     ['MRGF_', input_file(1:end-4), '.mat']), 'solution', '-v7.3');
+     ['MRGF_', file_name, '.mat']), 'solution', '-v7.3');
 
 fprintf('\n[MARIE 3.0] MRGF simulation completed successfully.\n');
-fprintf('[Saved] - ./data/solutions/MRGF_%s.mat\n', input_file(1:end-4));
+fprintf('[Saved] - ./data/solutions/MRGF_%s.mat\n', file_name);
 
+end
 % ============================= END OF FILE =============================
