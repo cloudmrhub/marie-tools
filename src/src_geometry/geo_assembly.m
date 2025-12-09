@@ -17,6 +17,7 @@ function [MREDM] = geo_assembly(MREDM,geo_flag)
                 MREDM.SIE.shield          = geo_scoil(shield_file,shield_lumped_elements);
                 MREDM.SIE.shield_RLC      = shield_lumped_elements; 
                 MREDM.SIE.coil            = [];
+                MREDM.SIE.RLC             = [];
                 MREDM.WIE.coil            = [];
                 MREDM.WIE.RLC             = [];
             else
