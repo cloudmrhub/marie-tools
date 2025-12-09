@@ -35,7 +35,7 @@ function[tuning_elements,...
     
     all_elements = all_matching_elements+tuning_elements+mutual_elements;
 
-    coil_entity = zeros(all_matching_elements+tuning_elements,all_matching_elements);
+    coil_entity = zeros(length(RLC_org),all_matching_elements);
     counter_ports = 1;
     for port_num = 1:length(RLC_org)
         if RLC_tmd(port_num).optim.boolean == 1 || (strcmp(RLC_org(port_num).type,'port') && RLC_tmd(port_num).optim.boolean == 0)

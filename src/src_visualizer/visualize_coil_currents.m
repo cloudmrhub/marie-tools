@@ -1,6 +1,6 @@
 function visualize_coil_currents(J,coil,pipi)
 
-    figure
+    % figure
 
     [c, j_cart] = surface_to_cartesian_currents(J,coil);
 
@@ -16,6 +16,6 @@ function visualize_coil_currents(J,coil,pipi)
     zlabel('z','interpreter','latex');
     axis equal;
     grid on;
-    title('$Re(j_{\rm surface})$','Interpreter','latex');
+    axis off;
 
 end

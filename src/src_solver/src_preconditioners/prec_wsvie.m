@@ -1,5 +1,5 @@
 function [MREDM] = prec_wsvie(MREDM)
-    
+
     % Wire-Coil-Shield
     if ~isempty(MREDM.WIE.coil) && ~isempty(MREDM.SIE.coil) && ~isempty(MREDM.SIE.shield)
         Zss  = MREDM.SIE.Z_shield;

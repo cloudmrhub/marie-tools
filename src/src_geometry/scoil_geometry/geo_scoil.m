@@ -9,6 +9,7 @@ function [SCOIL] = geo_scoil(filename,LC)
         port_F(port_num).type = LC(port_num).type;
         port_F(port_num).load = LC(port_num).load;
         port_F(port_num).value = LC(port_num).value;
+        port_F(port_num).Q = LC(port_num).Q;
         port_F(port_num).voltage = LC(port_num).excitation.voltage;
         
         if strcmp(LC(port_num).load,'mutual_inductor')

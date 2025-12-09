@@ -1,0 +1,12 @@
+{
+  "B0": 3.0063,
+  "Nucleus": "1H",
+  "Basis_Functions_VIE": 1,
+  "BodyFile": "Scatterers/2mm/Multilayer_Sphere.mat",
+  "CoilFile": "",
+  "WireFile": "Head_Receivers/Head_Receive_Array_1_Coil_z.msh",
+  "ShieldFile": "",
+  "SurfaceBasisSupportFile": "",
+  "TMD": 1,
+  "BasisFile": "Duke_head_5mm_PWC_7T.mat"
+}

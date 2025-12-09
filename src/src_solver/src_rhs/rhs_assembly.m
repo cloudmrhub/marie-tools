@@ -46,7 +46,7 @@ function [rhs] = rhs_assembly(MREDM,N_scat_ql)
     
     chunk          = N_ports_shield+M_ports;
     rows           = N_shield_sie+N_wie+1:N_shield_sie+N_wie+N_sie;
-    cols           = chunk+M_ports+1:chunk+N_ports;
+    cols           = chunk+1:chunk+N_ports;
     rhs(rows,cols) = Sie_F;  
 
 end

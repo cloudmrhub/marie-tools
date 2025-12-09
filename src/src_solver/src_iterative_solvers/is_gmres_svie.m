@@ -14,7 +14,10 @@ function [x,iter,resvec] = is_gmres_svie(A,b,restart,tol,maxit,L1,pL_L,L2,Mbprec
     r2  = r(N_sie+1:end);
     bp2 = bp(N_sie+1:end);
 
-    if ( isa(L1,'gpuArray') && isa(Mbprec,'gpuArray') ) || ( ~isa(L1,'gpuArray') && ~isa(Mbprec,'gpuArray') )
+    if isa(L1, 'function_handle')  
+        r1  = L1(r1);
+        bp1 = L1(bp1);
+    elseif ( isa(L1,'gpuArray') && isa(Mbprec,'gpuArray') ) || ( ~isa(L1,'gpuArray') && ~isa(Mbprec,'gpuArray') )
         r1  = L2 * (L1 * r1(pL_L));
         bp1 = L2 * (L1 * bp1(pL_L));
     else

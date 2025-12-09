@@ -55,7 +55,7 @@ clc
 % ---------------------------------------------------------------
 % STEP 1: Specify Input File
 % ---------------------------------------------------------------
-input_file = 'inp_Duke_StadiumTriangular.txt';  % Input file name
+input_file = 'inp_Duke_ProstateLinacCoil.json';  % Input file name
 
 % ---------------------------------------------------------------
 % STEP 2: Load Inputs

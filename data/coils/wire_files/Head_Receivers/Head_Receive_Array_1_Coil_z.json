@@ -8,9 +8,14 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [
-          1.340030083905819E-12,
-          1.0633202007170455E-9,
-          3.7342380149526933E-11
+          1.103415467183614E-10,
+          1.2081572078224119E-8,
+          1.3400001375323259E-12
+        ],
+        "Q": [
+          500,
+          200
+          500
         ],
         "optim": {
           "boolean": 1,
@@ -36,7 +41,8 @@
         "number": 2,
         "type": "element",
         "load": "capacitor",
-        "value": 1.9731012256015886E-12,
+        "value": 1.4581242726460932E-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": 5.02E-12,
@@ -53,7 +59,8 @@
         "number": 3,
         "type": "element",
         "load": "capacitor",
-        "value": 1.9731012256015886E-12,
+        "value": 1.4581242726460932E-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": 5.02E-12,
@@ -70,7 +77,8 @@
         "number": 4,
         "type": "element",
         "load": "capacitor",
-        "value": 1.9731012256015886E-12,
+        "value": 1.4581242726460932E-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": 5.02E-12,

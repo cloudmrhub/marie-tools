@@ -8,6 +8,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -25,6 +26,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5.4396e-13],
@@ -42,6 +44,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5.4396e-13],
@@ -59,6 +62,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5.4396e-13],
@@ -76,6 +80,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5.4396e-13],
@@ -93,6 +98,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5.4396e-13],
@@ -110,6 +116,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5.4396e-13],
@@ -127,6 +134,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5.4396e-13],
@@ -144,6 +152,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -158,6 +167,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 11 },
         "cross_talk": {},
         "excitation": { "entity": [2], "TxRx": "TxRx" }
@@ -167,6 +177,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 11 },
         "cross_talk": {},
         "excitation": { "entity": [2], "TxRx": "TxRx" }
@@ -176,6 +187,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 11 },
         "cross_talk": {},
         "excitation": { "entity": [2], "TxRx": "TxRx" }
@@ -185,6 +197,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 11 },
         "cross_talk": {},
         "excitation": { "entity": [2], "TxRx": "TxRx" }
@@ -194,6 +207,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 11 },
         "cross_talk": {},
         "excitation": { "entity": [2], "TxRx": "TxRx" }
@@ -203,6 +217,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 11 },
         "cross_talk": {},
         "excitation": { "entity": [2], "TxRx": "TxRx" }
@@ -212,6 +227,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 11 },
         "cross_talk": {},
         "excitation": { "entity": [2], "TxRx": "TxRx" }
@@ -221,6 +237,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 500, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -235,6 +252,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 20 },
         "cross_talk": {},
         "excitation": { "entity": [3], "TxRx": "Rx" }
@@ -244,6 +262,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 20 },
         "cross_talk": {},
         "excitation": { "entity": [3], "TxRx": "Rx" }
@@ -253,6 +272,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 20 },
         "cross_talk": {},
         "excitation": { "entity": [3], "TxRx": "Rx" }
@@ -262,6 +282,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 20 },
         "cross_talk": {},
         "excitation": { "entity": [3], "TxRx": "Rx" }
@@ -271,6 +292,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 20 },
         "cross_talk": {},
         "excitation": { "entity": [3], "TxRx": "Rx" }
@@ -289,6 +311,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 20 },
         "cross_talk": {},
         "excitation": { "entity": [3], "TxRx": "Rx" }
@@ -298,6 +321,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -312,6 +336,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 29 },
         "cross_talk": {},
         "excitation": { "entity": [4], "TxRx": "Rx" }
@@ -321,6 +346,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 29 },
         "cross_talk": {},
         "excitation": { "entity": [4], "TxRx": "Rx" }
@@ -330,6 +356,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 29 },
         "cross_talk": {},
         "excitation": { "entity": [4], "TxRx": "Rx" }
@@ -339,6 +366,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 29 },
         "cross_talk": {},
         "excitation": { "entity": [4], "TxRx": "Rx" }
@@ -348,6 +376,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 29 },
         "cross_talk": {},
         "excitation": { "entity": [4], "TxRx": "Rx" }
@@ -357,6 +386,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 29 },
         "cross_talk": {},
         "excitation": { "entity": [4], "TxRx": "Rx" }
@@ -366,6 +396,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 29 },
         "cross_talk": {},
         "excitation": { "entity": [4], "TxRx": "Rx" }
@@ -375,6 +406,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -389,6 +421,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 38 },
         "cross_talk": {},
         "excitation": { "entity": [5], "TxRx": "Rx" }
@@ -398,6 +431,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 38 },
         "cross_talk": {},
         "excitation": { "entity": [5], "TxRx": "Rx" }
@@ -407,6 +441,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 38 },
         "cross_talk": {},
         "excitation": { "entity": [5], "TxRx": "Rx" }
@@ -416,6 +451,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 38 },
         "cross_talk": {},
         "excitation": { "entity": [5], "TxRx": "Rx" }
@@ -425,6 +461,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 38 },
         "cross_talk": {},
         "excitation": { "entity": [5], "TxRx": "Rx" }
@@ -434,6 +471,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 38 },
         "cross_talk": {},
         "excitation": { "entity": [5], "TxRx": "Rx" }
@@ -443,6 +481,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 38 },
         "cross_talk": {},
         "excitation": { "entity": [5], "TxRx": "Rx" }
@@ -452,6 +491,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -466,6 +506,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 47 },
         "cross_talk": {},
         "excitation": { "entity": [6], "TxRx": "Rx" }
@@ -475,6 +516,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 47 },
         "cross_talk": {},
         "excitation": { "entity": [6], "TxRx": "Rx" }
@@ -484,6 +526,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 47 },
         "cross_talk": {},
         "excitation": { "entity": [6], "TxRx": "Rx" }
@@ -493,6 +536,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 47 },
         "cross_talk": {},
         "excitation": { "entity": [6], "TxRx": "Rx" }
@@ -502,6 +546,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 47 },
         "cross_talk": {},
         "excitation": { "entity": [6], "TxRx": "Rx" }
@@ -511,6 +556,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 47 },
         "cross_talk": {},
         "excitation": { "entity": [6], "TxRx": "Rx" }
@@ -520,6 +566,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 47 },
         "cross_talk": {},
         "excitation": { "entity": [6], "TxRx": "Rx" }
@@ -529,6 +576,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -543,6 +591,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 56 },
         "cross_talk": {},
         "excitation": { "entity": [7], "TxRx": "Rx" }
@@ -552,6 +601,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 56 },
         "cross_talk": {},
         "excitation": { "entity": [7], "TxRx": "Rx" }
@@ -561,6 +611,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 56 },
         "cross_talk": {},
         "excitation": { "entity": [7], "TxRx": "Rx" }
@@ -570,6 +621,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 56 },
         "cross_talk": {},
         "excitation": { "entity": [7], "TxRx": "Rx" }
@@ -579,6 +631,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 56 },
         "cross_talk": {},
         "excitation": { "entity": [7], "TxRx": "Rx" }
@@ -588,6 +641,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 56 },
         "cross_talk": {},
         "excitation": { "entity": [7], "TxRx": "Rx" }
@@ -597,6 +651,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 56 },
         "cross_talk": {},
         "excitation": { "entity": [7], "TxRx": "Rx" }
@@ -606,6 +661,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -620,6 +676,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 65 },
         "cross_talk": {},
         "excitation": { "entity": [8], "TxRx": "Rx" }
@@ -629,6 +686,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 65 },
         "cross_talk": {},
         "excitation": { "entity": [8], "TxRx": "Rx" }
@@ -638,6 +696,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 65 },
         "cross_talk": {},
         "excitation": { "entity": [8], "TxRx": "Rx" }
@@ -647,6 +706,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 65 },
         "cross_talk": {},
         "excitation": { "entity": [8], "TxRx": "Rx" }
@@ -656,6 +716,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 65 },
         "cross_talk": {},
         "excitation": { "entity": [8], "TxRx": "Rx" }
@@ -665,6 +726,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 65 },
         "cross_talk": {},
         "excitation": { "entity": [8], "TxRx": "Rx" }
@@ -674,6 +736,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 65 },
         "cross_talk": {},
         "excitation": { "entity": [8], "TxRx": "Rx" }
@@ -683,6 +746,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -697,6 +761,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 74 },
         "cross_talk": {},
         "excitation": { "entity": [9], "TxRx": "Rx" }
@@ -706,6 +771,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 74 },
         "cross_talk": {},
         "excitation": { "entity": [9], "TxRx": "Rx" }
@@ -715,6 +781,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 74 },
         "cross_talk": {},
         "excitation": { "entity": [9], "TxRx": "Rx" }
@@ -724,6 +791,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 74 },
         "cross_talk": {},
         "excitation": { "entity": [9], "TxRx": "Rx" }
@@ -733,6 +801,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 74 },
         "cross_talk": {},
         "excitation": { "entity": [9], "TxRx": "Rx" }
@@ -742,6 +811,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 74 },
         "cross_talk": {},
         "excitation": { "entity": [9], "TxRx": "Rx" }
@@ -751,6 +821,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 74 },
         "cross_talk": {},
         "excitation": { "entity": [9], "TxRx": "Rx" }
@@ -760,6 +831,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -774,6 +846,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 83 },
         "cross_talk": {},
         "excitation": { "entity": [10], "TxRx": "Rx" }
@@ -783,6 +856,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 83 },
         "cross_talk": {},
         "excitation": { "entity": [10], "TxRx": "Rx" }
@@ -792,6 +866,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 83 },
         "cross_talk": {},
         "excitation": { "entity": [10], "TxRx": "Rx" }
@@ -801,6 +876,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 83 },
         "cross_talk": {},
         "excitation": { "entity": [10], "TxRx": "Rx" }
@@ -810,6 +886,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 83 },
         "cross_talk": {},
         "excitation": { "entity": [10], "TxRx": "Rx" }
@@ -819,6 +896,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 83 },
         "cross_talk": {},
         "excitation": { "entity": [10], "TxRx": "Rx" }
@@ -828,6 +906,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 83 },
         "cross_talk": {},
         "excitation": { "entity": [10], "TxRx": "Rx" }
@@ -837,6 +916,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -851,6 +931,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 92 },
         "cross_talk": {},
         "excitation": { "entity": [11], "TxRx": "Rx" }
@@ -860,6 +941,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 92 },
         "cross_talk": {},
         "excitation": { "entity": [11], "TxRx": "Rx" }
@@ -869,6 +951,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 92 },
         "cross_talk": {},
         "excitation": { "entity": [11], "TxRx": "Rx" }
@@ -878,6 +961,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 92 },
         "cross_talk": {},
         "excitation": { "entity": [11], "TxRx": "Rx" }
@@ -887,6 +971,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 92 },
         "cross_talk": {},
         "excitation": { "entity": [11], "TxRx": "Rx" }
@@ -896,6 +981,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 92 },
         "cross_talk": {},
         "excitation": { "entity": [11], "TxRx": "Rx" }
@@ -905,6 +991,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 92 },
         "cross_talk": {},
         "excitation": { "entity": [11], "TxRx": "Rx" }
@@ -914,6 +1001,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -928,6 +1016,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 101 },
         "cross_talk": {},
         "excitation": { "entity": [12], "TxRx": "Rx" }
@@ -937,6 +1026,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 101 },
         "cross_talk": {},
         "excitation": { "entity": [12], "TxRx": "Rx" }
@@ -946,6 +1036,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 101 },
         "cross_talk": {},
         "excitation": { "entity": [12], "TxRx": "Rx" }
@@ -955,6 +1046,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 101 },
         "cross_talk": {},
         "excitation": { "entity": [12], "TxRx": "Rx" }
@@ -964,6 +1056,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 101 },
         "cross_talk": {},
         "excitation": { "entity": [12], "TxRx": "Rx" }
@@ -973,6 +1066,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 101 },
         "cross_talk": {},
         "excitation": { "entity": [12], "TxRx": "Rx" }
@@ -982,6 +1076,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 101 },
         "cross_talk": {},
         "excitation": { "entity": [12], "TxRx": "Rx" }
@@ -991,6 +1086,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -1005,6 +1101,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 110 },
         "cross_talk": {},
         "excitation": { "entity": [13], "TxRx": "Rx" }
@@ -1014,6 +1111,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 110 },
         "cross_talk": {},
         "excitation": { "entity": [13], "TxRx": "Rx" }
@@ -1023,6 +1121,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 110 },
         "cross_talk": {},
         "excitation": { "entity": [13], "TxRx": "Rx" }
@@ -1032,6 +1131,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 110 },
         "cross_talk": {},
         "excitation": { "entity": [13], "TxRx": "Rx" }
@@ -1041,6 +1141,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 110 },
         "cross_talk": {},
         "excitation": { "entity": [13], "TxRx": "Rx" }
@@ -1050,6 +1151,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 110 },
         "cross_talk": {},
         "excitation": { "entity": [13], "TxRx": "Rx" }
@@ -1059,6 +1161,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 110 },
         "cross_talk": {},
         "excitation": { "entity": [13], "TxRx": "Rx" }
@@ -1068,6 +1171,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -1082,6 +1186,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 119 },
         "cross_talk": {},
         "excitation": { "entity": [14], "TxRx": "TxRx" }
@@ -1091,6 +1196,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 119 },
         "cross_talk": {},
         "excitation": { "entity": [14], "TxRx": "TxRx" }
@@ -1100,6 +1206,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 119 },
         "cross_talk": {},
         "excitation": { "entity": [14], "TxRx": "TxRx" }
@@ -1109,6 +1216,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 119 },
         "cross_talk": {},
         "excitation": { "entity": [14], "TxRx": "TxRx" }
@@ -1118,6 +1226,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 119 },
         "cross_talk": {},
         "excitation": { "entity": [14], "TxRx": "TxRx" }
@@ -1127,6 +1236,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 119 },
         "cross_talk": {},
         "excitation": { "entity": [14], "TxRx": "TxRx" }
@@ -1136,6 +1246,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 119 },
         "cross_talk": {},
         "excitation": { "entity": [14], "TxRx": "TxRx" }
@@ -1145,6 +1256,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -1159,6 +1271,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 128 },
         "cross_talk": {},
         "excitation": { "entity": [15], "TxRx": "Rx" }
@@ -1168,6 +1281,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 128 },
         "cross_talk": {},
         "excitation": { "entity": [15], "TxRx": "Rx" }
@@ -1177,6 +1291,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 128 },
         "cross_talk": {},
         "excitation": { "entity": [15], "TxRx": "Rx" }
@@ -1186,6 +1301,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 128 },
         "cross_talk": {},
         "excitation": { "entity": [15], "TxRx": "Rx" }
@@ -1195,6 +1311,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 128 },
         "cross_talk": {},
         "excitation": { "entity": [15], "TxRx": "Rx" }
@@ -1204,6 +1321,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 128 },
         "cross_talk": {},
         "excitation": { "entity": [15], "TxRx": "Rx" }
@@ -1213,6 +1331,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 128 },
         "cross_talk": {},
         "excitation": { "entity": [15], "TxRx": "Rx" }
@@ -1222,6 +1341,7 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [1.34e-11, 1.00e-08, 1.34e-11],
+        "Q": [500, 200, 500],
         "optim": {
           "boolean": 1,
           "minim": [1.34e-12, 1.00e-09, 1.34e-12],
@@ -1236,6 +1356,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 137 },
         "cross_talk": {},
         "excitation": { "entity": [16], "TxRx": "Rx" }
@@ -1245,6 +1366,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 137 },
         "cross_talk": {},
         "excitation": { "entity": [16], "TxRx": "Rx" }
@@ -1254,6 +1376,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 137 },
         "cross_talk": {},
         "excitation": { "entity": [16], "TxRx": "Rx" }
@@ -1263,6 +1386,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 137 },
         "cross_talk": {},
         "excitation": { "entity": [16], "TxRx": "Rx" }
@@ -1272,6 +1396,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 137 },
         "cross_talk": {},
         "excitation": { "entity": [16], "TxRx": "Rx" }
@@ -1281,6 +1406,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 137 },
         "cross_talk": {},
         "excitation": { "entity": [16], "TxRx": "Rx" }
@@ -1290,6 +1416,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 5.4396e-12,
+        "Q": 500,
         "optim": { "boolean": 1, "minim": [5.4396e-13], "maxim": [5.4396e-11], "symmetry": 137 },
         "cross_talk": {},
         "excitation": { "entity": [16], "TxRx": "Rx" }

@@ -1,8 +1,5 @@
 function visualize_ZPm_SPm_freq_sweep(figure_freq)
 
-    figure;
-    hold on;
-
     ZPm_plot_Rx = figure_freq.ZPm_plot_Rx;
     SPm_plot_Rx = figure_freq.SPm_plot_Rx;
     ZPm_plot_Tx = figure_freq.ZPm_plot_Tx;
@@ -24,6 +21,7 @@ function visualize_ZPm_SPm_freq_sweep(figure_freq)
         end
 
         figure(i)
+        hold on;
     
         [p1,~,~]              = size(ZPm_plot);
         colorsX               = lines(p1^2);

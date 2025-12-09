@@ -1,22 +1,21 @@
 function [Z,Z_loss] = assembly_wle(Z,Z_loss,port,emc)
     
     %% Select load type
-    Q = inf;
     if strcmp(port.load,'resistor')
         Zx_val = port.value;
         R_loss = port.value;
     elseif strcmp(port.load,'inductor')
         Zx_val = 1i * emc.omega * port.value;
-        R_loss = (emc.omega * port.value) / Q;
+        R_loss = (emc.omega * port.value) / port.Q;
         Zx_val = Zx_val+R_loss;
     elseif strcmp(port.load,'capacitor')
         Zx_val = 1 / (1i * emc.omega * port.value);
-        R_loss = 1 / (emc.omega * port.value * Q);
+        R_loss = 1 / (emc.omega * port.value * port.Q);
         Zx_val = Zx_val+R_loss;
     elseif strcmp(port.load,'mutual_inductor')
         Zx_val = 1i * emc.omega * port.value;
         Zx_val_M = 1i * emc.omega * port.value_mutual;
-        R_loss = (emc.omega * port.value) / Q;  
+        R_loss = (emc.omega * port.value) / port.Q;  
         Zx_val = Zx_val+R_loss;
     end
 	

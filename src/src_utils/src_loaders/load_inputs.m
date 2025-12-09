@@ -51,6 +51,7 @@ function [MREDM] = load_inputs(input_file)
     inputs_json = jsondecode(raw);
     
     inputs.B0            = double(inputs_json.B0);                  % Magnetic field strength (T)
+    inputs.nucleus       = inputs_json.Nucleus;                     % Magnetic field strength (T)
     inputs.PWX           = double(inputs_json.Basis_Functions_VIE); % Basis type (PWC/PWL)
     inputs.rhbm          = inputs_json.BodyFile;                    % Body model
     inputs.coil          = inputs_json.CoilFile;                    % Coil geometry
@@ -95,6 +96,6 @@ function [MREDM] = load_inputs(input_file)
     inputs.pFFT_flag = 1;  % Enable precorrected FFT acceleration
     
     MREDM.inputs    = inputs;                   % Store all parameters
-    MREDM.emc       = em_constants(inputs.B0);  % Electromagnetic constants
+    MREDM.emc       = em_constants(inputs.B0,inputs.nucleus);  % Electromagnetic constants
     
 end

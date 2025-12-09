@@ -25,6 +25,7 @@ function [WCOIL] = geo_wcoil(filename,LC)
         port(port_num).type = LC(port_num).type;
         port(port_num).load = LC(port_num).load;
         port(port_num).value = LC(port_num).value;
+        port(port_num).Q = LC(port_num).Q;
         port(port_num).voltage = LC(port_num).excitation.voltage;
         if strcmp(LC(port_num).load,'mutual_inductor')
             port(port_num).t_mutual = LC(port_num).cross_talk(1);
