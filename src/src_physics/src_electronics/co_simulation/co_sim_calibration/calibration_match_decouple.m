@@ -69,11 +69,11 @@ function [M_cal,...
             ZPm_loss = inv(YPm_loss);
             if ~isempty(E_cs)
                 ZPm = ZPm + diag(E_cs.*Cap_loss./(E_cs+Cap_loss));
-                ZPm_loss = ZPm_loss + E_cs;
+                ZPm_loss = ZPm_loss + diag(E_cs);
             end
             if ~isempty(E_ls)
                 ZPm = ZPm + diag(E_ls.*Ind_loss./(E_ls+Ind_loss));
-                ZPm_loss = ZPm_loss + E_ls;
+                ZPm_loss = ZPm_loss + diag(E_ls);
             end
             if ~isempty(E_rs)
                 ZPm = ZPm + E_rs;
