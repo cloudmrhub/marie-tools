@@ -89,5 +89,6 @@ function [M_cal,...
     ZPm_loss = inv(YPm_loss);
     phi_lumped_elements.Tx = 1/2*diag(abs(real(ZPm_loss-ZPm))).*(1./abs(diag(ZPm))).^2;
     phi_lumped_elements.Rx = 1/2*diag(abs(real(ZPm_loss-ZPm))).*(1./abs(diag(ZPm))).^2;
+    phi_lumped_elements.Rx(isnan(phi_lumped_elements.Rx)) = 0;
 
 end
