@@ -74,91 +74,38 @@ function[figure_freq] = get_ZPm_Tx_freq(X,...
 
     for freq_id = 1:length(freq_range)
 
-        YPn_temp = YPn;
-
-        % Tuning Elements
-        Y_vals               = zeros(size(true_tuning_elements));
-
-        Cap_loss             = omega_range(freq_id) .* true_tuning_elements(is_capacitor) .* Q_true_tuning_elements(is_capacitor);
-        Ind_loss             = (omega_range(freq_id) .* true_tuning_elements(is_inductor) .* Q_true_tuning_elements(is_inductor) );
-        MutInd_loss          = (omega_range(freq_id) .* true_tuning_elements(is_mutual_inductor) .* Q_true_tuning_elements(is_mutual_inductor) );
-        Cap_Value            = 1i * omega_range(freq_id) .* true_tuning_elements(is_capacitor);
-        Ind_Value            = 1 ./ (1i * omega_range(freq_id) .* true_tuning_elements(is_inductor));
-        MutInd_Value         = 1 ./ (1i*omega_range(freq_id) .* true_tuning_elements(is_mutual_inductor));
-    
-        Y_vals(is_capacitor) = Cap_Value .* Cap_loss ./ (Cap_Value + Cap_loss);
-        Y_vals(is_inductor)  = Ind_Value .* Ind_loss ./ (Ind_Value + Ind_loss);
-        Y_vals(is_resistor)  = 1 ./ true_tuning_elements(is_resistor);
-        Y_vals(is_mutual_inductor) = MutInd_Value .* MutInd_loss ./ (MutInd_Value + MutInd_loss);
-        
-        % Construct diagonal admittance matrix and add values
-        E_tu          = diag(Y_vals(:));
-        YPn_temp(N,N) = YPn_temp(N,N) + E_tu;
-        idx           = sub2ind(size(YPn_temp), D1, D2);
-        YPn_temp(idx) = YPn_temp(idx) + 1 ./ (1i*omega_range(freq_id) .* mutual_inductance_coefficients.*sqrt(mutual_inductances(mapped_D1).*mutual_inductances(mapped_D2)));
-        idx           = sub2ind(size(YPn_temp), D2, D1);
-        YPn_temp(idx) = YPn_temp(idx) + 1 ./ (1i*omega_range(freq_id) .* mutual_inductance_coefficients.*sqrt(mutual_inductances(mapped_D2).*mutual_inductances(mapped_D1)));
-        
-        % Add tuning elements
-        YPm = YPn_temp(M,M)-YPn_temp(M,N)/YPn_temp(N,N)*YPn_temp(N,M);
+        [YPm,~,~] = tune(true_tuning_elements,...
+                         omega_range(freq_id),...
+                         Q_true_tuning_elements,...
+                         is_capacitor,...
+                         is_inductor,...
+                         is_mutual_inductor,...
+                         is_resistor,...
+                         YPn,...
+                         D1,...
+                         D2,...
+                         mutual_inductance_coefficients,...
+                         mutual_inductances,...
+                         mapped_D1,...
+                         mapped_D2,...
+                         N,...
+                         M);
     
         % Matching Elements
-        for i = 1:length_matching_network
-            stage_mask            = (port_order == i);
-            existsXx              = is_capacitor_parallel | is_inductor_parallel | is_resistor_parallel | is_capacitor_series | is_inductor_series | is_resistor_series;
-            slot2idx              = zeros(numel(existsXx),1);
-            slot2idx(existsXx)    = 1:nnz(existsXx);          
-            ii                    = slot2idx(stage_mask); 
-            stage_elements        = zeros(nnz(stage_mask),1);
-            stage_elementsQ       = zeros(nnz(stage_mask),1);
-            good                  = ii > 0;
-            stage_elements(good)  = matching_elements(ii(good));
-            stage_elementsQ(good) = Q_matching_elements(ii(good));
-            is_capacitor_parallel_local = is_capacitor_parallel(port_order==i);
-            is_inductor_parallel_local  = is_inductor_parallel(port_order==i);
-            is_resistor_parallel_local  = is_resistor_parallel(port_order==i);
-            is_capacitor_series_local   = is_capacitor_series(port_order==i);
-            is_inductor_series_local    = is_inductor_series(port_order==i);
-            is_resistor_series_local    = is_resistor_series(port_order==i);
-            if sum(is_capacitor_parallel_local)> 0 || sum(is_inductor_parallel_local)>0 || sum(is_resistor_parallel_local)>0
-                E_cp = diag(1i* omega_range(freq_id) * stage_elements(is_capacitor_parallel_local)); 
-                E_lp = diag(1./(1i*omega_range(freq_id)*stage_elements(is_inductor_parallel_local)));    
-                E_rp = diag(1./(stage_elements(is_resistor_parallel_local)));  
-                Cap_loss  = diag(omega_range(freq_id) * stage_elements(is_capacitor_parallel_local) .* stage_elementsQ(is_capacitor_parallel_local) );
-                Ind_loss  = diag((omega_range(freq_id) * stage_elements(is_inductor_parallel_local).* stage_elementsQ(is_inductor_parallel_local) ));    
-  
-                if ~isempty(E_cp)
-                    YPm = YPm + E_cp.*Cap_loss./(E_cp+Cap_loss);
-                end
-                if ~isempty(E_lp)
-                    YPm = YPm + E_lp.*Ind_loss./(E_lp+Ind_loss);
-                end
-                if ~isempty(E_rp)
-                    YPm = YPm + E_rp;
-                end
-            end
-            if sum(is_capacitor_series_local)> 0 || sum(is_inductor_series_local)>0 || sum(is_resistor_series_local)>0
-                E_cs = diag(1./(1i*omega_range(freq_id)*stage_elements(is_capacitor_series_local))); 
-                E_ls = diag(1i*omega_range(freq_id)*stage_elements(is_inductor_series_local));    
-                E_rs = diag(stage_elements(is_resistor_series_local));    
-                Cap_loss  = diag((omega_range(freq_id) * stage_elements(is_capacitor_series_local).* stage_elementsQ(is_capacitor_series_local) ));   
-                Ind_loss  = diag(omega_range(freq_id) * stage_elements(is_inductor_series_local) .* stage_elementsQ(is_inductor_series_local) ); 
-                
-                ZPm = inv(YPm);
-                if ~isempty(E_cs)
-                    ZPm = ZPm + E_cs.*Cap_loss./(E_cs+Cap_loss);
-                end
-                if ~isempty(E_ls)
-                    ZPm = ZPm + E_ls.*Ind_loss./(E_ls+Ind_loss);
-                end
-                if ~isempty(E_rs)
-                    ZPm = ZPm + E_rs;
-                end
-                YPm = inv(ZPm);
-            end
-        end
-        ZPm = inv(YPm);
-        SPm = np_z2s(ZPm,z0);
+        [SPm,ZPm,~] = match(YPm,...
+                            YPm,...
+                            z0,...
+                            length_matching_network,...
+                            port_order,...
+                            is_capacitor_parallel,...
+                            is_inductor_parallel,...
+                            is_resistor_parallel,...
+                            is_capacitor_series,...
+                            is_inductor_series,...
+                            is_resistor_series,...
+                            matching_elements,...
+                            Q_matching_elements,...
+                            omega_range(freq_id));
 
         ZPm_plot(:,:,freq_id) = ZPm;
         SPm_plot(:,:,freq_id) = SPm;
