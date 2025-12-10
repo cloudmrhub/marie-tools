@@ -45,7 +45,7 @@ function [M_cal,...
             E_rp = diag(1./(stage_elements(is_resistor_parallel_local)));   
             
             Cap_loss  = (omega * stage_elements(is_capacitor_parallel_local) .* stage_elementsQ(is_capacitor_parallel_local) );
-            Ind_loss  = (1./(omega * stage_elements(is_inductor_parallel_local).* stage_elementsQ(is_inductor_parallel_local) ));    
+            Ind_loss  = (omega * stage_elements(is_inductor_parallel_local).* stage_elementsQ(is_inductor_parallel_local) );    
             if ~isempty(E_cp)
                 YPm = YPm + diag(E_cp.*Cap_loss./(E_cp+Cap_loss));
                 YPm_loss = YPm_loss + diag(E_cp);
@@ -63,7 +63,7 @@ function [M_cal,...
             E_ls = (1i*omega*stage_elements(is_inductor_series_local));    
             E_rs = diag(stage_elements(is_resistor_series_local));    
             
-            Cap_loss  = (1./(omega * stage_elements(is_capacitor_series_local).* stage_elementsQ(is_capacitor_series_local) ));   
+            Cap_loss  = (omega * stage_elements(is_capacitor_series_local).* stage_elementsQ(is_capacitor_series_local) );   
             Ind_loss  = (omega * stage_elements(is_inductor_series_local) .* stage_elementsQ(is_inductor_series_local) ); 
             ZPm = inv(YPm);
             ZPm_loss = inv(YPm_loss);
