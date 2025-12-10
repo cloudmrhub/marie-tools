@@ -114,23 +114,23 @@ If you use MARIE 3.0, please cite:
 ### Papers on MARIE (please cite explicitly if needed)
 1. **Piecewise-constant approximation of VIE**: Polimeridis, Athanasios G., et al. "Stable FFT-JVIE solvers for fast analysis of highly inhomogeneous dielectric objects." Journal of Computational Physics 269 (2014): 280-296.
 2. **Power Calculations**: Polimeridis, Athanasios G., et al. "On the computation of power in volume integral equation formulations." IEEE Transactions on Antennas and Propagation 63.2 (2014): 611-620.
-2. **MARIE**: Villena, Jorge Fernandez, et al. "MARIE–a MATLAB-based open source software for the fast electromagnetic analysis of MRI systems." Proceedings of the 23rd Annual Meeting of ISMRM, Toronto, Canada. 2015.
-3. **Magnetic Resonance Green's function**: Villena, Jorge Fernández, et al. "Fast electromagnetic analysis of MRI transmit RF coils based on accelerated integral equation methods." IEEE Transactions on Biomedical Engineering 63.11 (2016): 2250-2261.
-4. **Evaluation of Signular Integrals**: Tambova, Alexandra A., et al. "On the generalization of DIRECTFN for singular integrals over quadrilateral patches." IEEE Transactions on Antennas and Propagation 66.1 (2017): 304-314.
-5. **Tucker decomposition-based compresion of VIE**: Giannakopoulos, Ilias I., Mikhail S. Litsarev, and Athanasios G. Polimeridis. "Memory footprint reduction for the FFT-based volume integral equation method via tensor decompositions." IEEE Transactions on Antennas and Propagation 67.12 (2019): 7476-7486.
-6. **Precorrected Fast Fourier Transform-based SVIE**: Guryev, Georgy D., et al. "Fast field analysis for complex coils and metal implants in MARIE 2.0." Proc. ISMRM. 2019.
-7. **Piecewise-linear approximation of VIE**: Georgakis, Ioannis P., et al. "A fast volume integral equation solver with linear basis functions for the accurate computation of EM fields in MRI." IEEE Transactions on Antennas and Propagation 69.7 (2020): 4020-4032.
-8. **Ultimate Transmit Efficiency**: Georgakis, Ioannis P., Athanasios G. Polimeridis, and Riccardo Lattanzi. "A formalism to investigate the optimal transmit efficiency in radiofrequency shimming." NMR in Biomedicine 33.11 (2020): e4383.
-9. **Tucker decomposition-based compression of SVIE**: Giannakopoulos, Ilias I., et al. "Compression of volume-surface integral equation matrices via Tucker decomposition for magnetic resonance applications." IEEE transactions on antennas and propagation 70.1 (2021): 459-471.
-10. **Tensor Train-based SVIE**: Giannakopoulos, Ilias I., et al. "A tensor train compression scheme for remote volume-surface integral equation interactions." 2021 International Applied Computational Electromagnetics Society Symposium (ACES). IEEE, 2021.
-11. **Ultimate Electromagnetic Basis and Ultimate SNR**: Georgakis, Ioannis P., et al. "Novel numerical basis sets for electromagnetic field expansion in arbitrary inhomogeneous objects." IEEE transactions on antennas and propagation 70.9 (2022): 8227-8241.
-12. **Hybrid cross-Tensor Train and Precorrected Fast Fourier Transform-based SVIE**: Giannakopoulos, Ilias I., et al. "A hybrid volume-surface integral equation method for rapid electromagnetic simulations in MRI." IEEE Transactions on Biomedical Engineering 70.1 (2022): 105-114.
-13. **Perturbation Matrix-based SVIE**: Guryev, Georgy D., et al. "MARIE 2.0: a perturbation matrix based patient-specific MRI field simulator." IEEE Transactions on Biomedical Engineering 70.5 (2022): 1575-1586.
-14. **Ideal Current Patterns**: Giannakopoulos, Ilias I., et al. "Computational methods for the estimation of ideal current patterns in realistic human models." Magnetic resonance in medicine 91.2 (2024): 760-772.
+3. **MARIE**: Villena, Jorge Fernandez, et al. "MARIE–a MATLAB-based open source software for the fast electromagnetic analysis of MRI systems." Proceedings of the 23rd Annual Meeting of ISMRM, Toronto, Canada. 2015.
+4. **Magnetic Resonance Green's function**: Villena, Jorge Fernández, et al. "Fast electromagnetic analysis of MRI transmit RF coils based on accelerated integral equation methods." IEEE Transactions on Biomedical Engineering 63.11 (2016): 2250-2261.
+5. **Evaluation of Signular Integrals**: Tambova, Alexandra A., et al. "On the generalization of DIRECTFN for singular integrals over quadrilateral patches." IEEE Transactions on Antennas and Propagation 66.1 (2017): 304-314.
+6. **Tucker decomposition-based compresion of VIE**: Giannakopoulos, Ilias I., Mikhail S. Litsarev, and Athanasios G. Polimeridis. "Memory footprint reduction for the FFT-based volume integral equation method via tensor decompositions." IEEE Transactions on Antennas and Propagation 67.12 (2019): 7476-7486.
+7. **Precorrected Fast Fourier Transform-based SVIE**: Guryev, Georgy D., et al. "Fast field analysis for complex coils and metal implants in MARIE 2.0." Proc. ISMRM. 2019.
+8. **Piecewise-linear approximation of VIE**: Georgakis, Ioannis P., et al. "A fast volume integral equation solver with linear basis functions for the accurate computation of EM fields in MRI." IEEE Transactions on Antennas and Propagation 69.7 (2020): 4020-4032.
+9. **Ultimate Transmit Efficiency**: Georgakis, Ioannis P., Athanasios G. Polimeridis, and Riccardo Lattanzi. "A formalism to investigate the optimal transmit efficiency in radiofrequency shimming." NMR in Biomedicine 33.11 (2020): e4383.
+10. **Tucker decomposition-based compression of SVIE**: Giannakopoulos, Ilias I., et al. "Compression of volume-surface integral equation matrices via Tucker decomposition for magnetic resonance applications." IEEE transactions on antennas and propagation 70.1 (2021): 459-471.
+11. **Tensor Train-based SVIE**: Giannakopoulos, Ilias I., et al. "A tensor train compression scheme for remote volume-surface integral equation interactions." 2021 International Applied Computational Electromagnetics Society Symposium (ACES). IEEE, 2021.
+12. **Ultimate Electromagnetic Basis and Ultimate SNR**: Georgakis, Ioannis P., et al. "Novel numerical basis sets for electromagnetic field expansion in arbitrary inhomogeneous objects." IEEE transactions on antennas and propagation 70.9 (2022): 8227-8241.
+13. **Hybrid cross-Tensor Train and Precorrected Fast Fourier Transform-based SVIE**: Giannakopoulos, Ilias I., et al. "A hybrid volume-surface integral equation method for rapid electromagnetic simulations in MRI." IEEE Transactions on Biomedical Engineering 70.1 (2022): 105-114.
+14. **Perturbation Matrix-based SVIE**: Guryev, Georgy D., et al. "MARIE 2.0: a perturbation matrix based patient-specific MRI field simulator." IEEE Transactions on Biomedical Engineering 70.5 (2022): 1575-1586. (Note: the Perturbation Matrix method is available in this repository: [https://github.com/georgyguryev/MARIE_2.0](https://github.com/georgyguryev/MARIE_2.0))
+15. **Ideal Current Patterns**: Giannakopoulos, Ilias I., et al. "Computational methods for the estimation of ideal current patterns in realistic human models." Magnetic resonance in medicine 91.2 (2024): 760-772.
 
 ## 💬 **Acknowledgments**
 
-This work is currently supported in part by **NIH K99 EB035163**, **R01 EB036483**, and **R01 EB024536**, and performed under the **Center for Advanced Imaging Innovation and Research (CAI²R)** — an NIH P41 National Center for Biomedical Imaging and Bioengineering (P41 EB017183).
+This work is currently supported in part by **NIH K99 EB035163**, **R01 EB036483**, and **R01 EB024536**, and performed under the **Center for Advanced Imaging Innovation and Research (CAI²R)**, an NIH P41 National Center for Biomedical Imaging and Bioengineering (P41 EB017183).
 
 ---
 
@@ -143,7 +143,7 @@ Center for Biomedical Imaging, NYU Grossman School of Medicine
 
 ---
 
-## 🧑‍💻 **Contibutors**
+## 🧑‍💻 **Contributors**
 
 **Ilias I. Giannakopoulos, PhD**, Center for Biomedical Imaging, NYU Grossman School of Medicine
 
@@ -164,6 +164,8 @@ Center for Biomedical Imaging, NYU Grossman School of Medicine
 **Jacob K. White, PhD**, Electrical Engineering and Computer Science, Massachusetts Institute of Technology
 
 **Athanasios G. Polimeridis, PhD**, Industry
+
+**Ryan Brown, PhD**, Center for Biomedical Imaging, NYU Grossman School of Medicine
 
 **Riccardo Lattanzi, PhD**, Center for Biomedical Imaging, NYU Grossman School of Medicine
 

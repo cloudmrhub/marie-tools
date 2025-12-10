@@ -30,7 +30,12 @@
         "excitation": {
           "entity": 1,
           "TxRx": "Rx"
-        }
+        },
+        "Q": [
+          5000,
+          2000,
+          5000
+        ]
       },
       {
         "number": 2,
@@ -47,7 +52,8 @@
         "excitation": {
           "entity": 1,
           "TxRx": "Rx"
-        }
+        },
+        "Q": 5000
       },
       {
         "number": 3,
@@ -64,7 +70,8 @@
         "excitation": {
           "entity": 1,
           "TxRx": "Rx"
-        }
+        },
+        "Q": 5000
       },
       {
         "number": 4,
@@ -81,7 +88,8 @@
         "excitation": {
           "entity": 1,
           "TxRx": "Rx"
-        }
+        },
+        "Q": 5000
       }
     ]
   }

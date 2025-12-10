@@ -54,13 +54,13 @@ clc
 % STEP 1: User Inputs
 % ---------------------------------------------------------------
 B0            = 7.0037;                          % Main magnetic field (T)
-YPn_mat       = 'YPn_mat_2020.mat';              % Y-parameter file
+YPn_mat       = 'YPn_mat.mat';              % Y-parameter file
 coil_file_inp = 'Head_Receive_Array_31_Coils_CST.json';  % Coil JSON file
 
 % ---------------------------------------------------------------
 % STEP 2: Load Constants and Network Parameters
 % ---------------------------------------------------------------
-emc = em_constants(B0);  % Physical constants based on B0
+emc = em_constants(B0,'1H');  % Physical constants based on B0
 load(fullfile('./data/coils/external_coils', YPn_mat), 'YPn'); 
 
 % ---------------------------------------------------------------

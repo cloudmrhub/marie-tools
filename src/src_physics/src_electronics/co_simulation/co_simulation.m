@@ -28,21 +28,24 @@ function[MREDM] = co_simulation(MREDM)
         coil_type_TxRx_and_Tx        = all(ismember(coil_types, ["TxRx", "Tx"])) && all(ismember(["TxRx", "Tx"], coil_types));
         coil_type_TxRx_and_Tx_and_Rx = all(ismember(coil_types, ["TxRx", "Rx", "Tx"])) && all(ismember(["TxRx", "Rx", "Tx"], coil_types));
 
+        % Get Losses
+        Q_val = co_simulation_get_Q_values(RLC_tmd);
+
         % Decision Tree
         if coil_type_Rx
-            [return_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_Rx_optim(YPn,emc,RLC_org,RLC_tmd,options_PSO_1,options_PSO_2);
+            [return_elements,phi_lumped_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_Rx_optim(YPn,emc,RLC_org,RLC_tmd,Q_val,options_PSO_1,options_PSO_2);
         elseif coil_type_Tx
-            [return_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_Tx_optim(YPn,emc,RLC_org,RLC_tmd,options_PSO_1,options_PSO_2);
+            [return_elements,phi_lumped_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_Tx_optim(YPn,emc,RLC_org,RLC_tmd,Q_val,options_PSO_1,options_PSO_2);
         elseif coil_type_Tx_and_Rx
-            [return_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_Rx_and_Tx_optim(YPn,emc,RLC_org,RLC_tmd,options_PSO_1,options_PSO_2);
+            [return_elements,phi_lumped_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_Rx_and_Tx_optim(YPn,emc,RLC_org,RLC_tmd,Q_val,options_PSO_1,options_PSO_2);
         elseif coil_type_TxRx
-            [return_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_TxRx_optim(YPn,emc,RLC_org,RLC_tmd,options_PSO_1,options_PSO_2);
+            [return_elements,phi_lumped_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_TxRx_optim(YPn,emc,RLC_org,RLC_tmd,Q_val,options_PSO_1,options_PSO_2);
         elseif coil_type_TxRx_and_Rx
-            [return_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_TxRx_and_Rx_optim(YPn,emc,RLC_org,RLC_tmd,options_PSO_1,options_PSO_2);
+            [return_elements,phi_lumped_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_TxRx_and_Rx_optim(YPn,emc,RLC_org,RLC_tmd,Q_val,options_PSO_1,options_PSO_2);
         elseif coil_type_TxRx_and_Tx
-            [return_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_TxRx_and_Tx_optim(YPn,emc,RLC_org,RLC_tmd,options_PSO_1,options_PSO_2);
+            [return_elements,phi_lumped_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_TxRx_and_Tx_optim(YPn,emc,RLC_org,RLC_tmd,Q_val,options_PSO_1,options_PSO_2);
         elseif coil_type_TxRx_and_Tx_and_Rx
-            [return_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_TxRx_and_Rx_and_Tx_optim(YPn,emc,RLC_org,RLC_tmd,options_PSO_1,options_PSO_2);
+            [return_elements,phi_lumped_elements,M_cal,YPm,ZPm,SPm,SP_det,figure_freq] = co_simulation_TxRx_and_Rx_and_Tx_optim(YPn,emc,RLC_org,RLC_tmd,Q_val,options_PSO_1,options_PSO_2);
         end
     
         % Store Updated elements
@@ -66,20 +69,23 @@ function[MREDM] = co_simulation(MREDM)
         % Get Y parameters
         YPn = MREDM.fields.netp.YP_s;
 
+        % Get Losses
+        Q_val = co_simulation_get_Q_values(RLC_org);
+
         if coil_type_Rx
-            [M_cal,YPm,ZPm,SPm,SP_det] = co_simulation_Rx_no_optim(YPn,emc,RLC_org);
+            [M_cal,phi_lumped_elements,YPm,ZPm,SPm,SP_det] = co_simulation_Rx_no_optim(YPn,emc,RLC_org,Q_val);
         elseif coil_type_Tx
-            [M_cal,YPm,ZPm,SPm,SP_det] = co_simulation_Tx_no_optim(YPn,emc,RLC_org);
+            [M_cal,phi_lumped_elements,YPm,ZPm,SPm,SP_det] = co_simulation_Tx_no_optim(YPn,emc,RLC_org,Q_val);
         elseif coil_type_Tx_and_Rx
-            [M_cal,YPm,ZPm,SPm,SP_det] = co_simulation_Rx_and_Tx_no_optim(YPn,emc,RLC_org);
+            [M_cal,phi_lumped_elements,YPm,ZPm,SPm,SP_det] = co_simulation_Rx_and_Tx_no_optim(YPn,emc,RLC_org,Q_val);
         elseif coil_type_TxRx
-            [M_cal,YPm,ZPm,SPm,SP_det] = co_simulation_TxRx_no_optim(YPn,emc,RLC_org);
+            [M_cal,phi_lumped_elements,YPm,ZPm,SPm,SP_det] = co_simulation_TxRx_no_optim(YPn,emc,RLC_org,Q_val);
         elseif coil_type_TxRx_and_Rx
-            [M_cal,YPm,ZPm,SPm,SP_det] = co_simulation_Rx_and_TxRx_no_optim(YPn,emc,RLC_org);
+            [M_cal,phi_lumped_elements,YPm,ZPm,SPm,SP_det] = co_simulation_Rx_and_TxRx_no_optim(YPn,emc,RLC_org,Q_val);
         elseif coil_type_TxRx_and_Tx
-            [M_cal,YPm,ZPm,SPm,SP_det] = co_simulation_TxRx_and_Tx_no_optim(YPn,emc,RLC_org);
+            [M_cal,phi_lumped_elements,YPm,ZPm,SPm,SP_det] = co_simulation_TxRx_and_Tx_no_optim(YPn,emc,RLC_org,Q_val);
         elseif coil_type_TxRx_and_Tx_and_Rx
-            [M_cal,YPm,ZPm,SPm,SP_det] = co_simulation_TxRx_and_TxRx_no_optim(YPn,emc,RLC_org);
+            [M_cal,phi_lumped_elements,YPm,ZPm,SPm,SP_det] = co_simulation_TxRx_and_TxRx_no_optim(YPn,emc,RLC_org,Q_val);
         end
         
     end
@@ -98,5 +104,6 @@ function[MREDM] = co_simulation(MREDM)
     MREDM.fields.netp.ZP_s = ZPm;
     MREDM.fields.netp.SP_s = SPm;
     MREDM.fields.netp.SP_p = SP_det;
+    MREDM.fields.netp.phi_lumped_elements = phi_lumped_elements;
 
 end

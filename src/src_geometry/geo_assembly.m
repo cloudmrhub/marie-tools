@@ -17,6 +17,7 @@ function [MREDM] = geo_assembly(MREDM,geo_flag)
                 MREDM.SIE.shield          = geo_scoil(shield_file,shield_lumped_elements);
                 MREDM.SIE.shield_RLC      = shield_lumped_elements; 
                 MREDM.SIE.coil            = [];
+                MREDM.SIE.RLC             = [];
                 MREDM.WIE.coil            = [];
                 MREDM.WIE.RLC             = [];
             else
@@ -73,8 +74,19 @@ function [MREDM] = geo_assembly(MREDM,geo_flag)
         basis_file             = fullfile('./data/coils/basis_files',inp.basis_support);
         MREDM.SIE.coil         = geo_shield(basis_file);
         MREDM.dimensions.N_sie = max(MREDM.SIE.coil.index);
+        MREDM.SIE.RLC        = [];
+        MREDM.WIE.coil       = [];
+        MREDM.WIE.RLC        = [];
+        MREDM.SIE.shield     = [];
+        MREDM.SIE.shield_RLC = [];
     elseif geo_flag == 3
         MREDM = geo_ultimate_basis(MREDM);
+        MREDM.SIE.coil       = [];
+        MREDM.SIE.RLC        = [];
+        MREDM.WIE.coil       = [];
+        MREDM.WIE.RLC        = [];
+        MREDM.SIE.shield     = [];
+        MREDM.SIE.shield_RLC = [];
     end
 
     MREDM.EP = em_assembly(MREDM,geo_flag);

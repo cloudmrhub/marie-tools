@@ -62,7 +62,7 @@ clc
 % ---------------------------------------------------------------
 % STEP 1: Specify Input File
 % ---------------------------------------------------------------
-input_file = 'inp_Duke_StadiumTriangular.txt';  % Input file name
+input_file = 'inp_Duke_StadiumTriangular.json';  % Input file name
 geo_flag   = 2;                                 % 2 = Surface-supported basis
 
 % ---------------------------------------------------------------
@@ -97,8 +97,7 @@ end
 % STEP 6: Solve VIE System
 % ---------------------------------------------------------------
 fprintf('Solving VIE ...\n');
-[BASIS.Jb, BASIS.U_hat_inv, BASIS.S_hat_inv, BASIS.V_hat_inv] = ...
-    ie_solver_vie(MREDM, BASIS);  % Solve for basis current distributions
+BASIS = ie_solver_vie_basis(MREDM, BASIS);  % Solve for basis current distributions
 
 % ---------------------------------------------------------------
 % STEP 7: Compute Total Field Basis

@@ -16,12 +16,18 @@ function [snr_field] = em_SNR(MREDM)
         B1m_3D = reshape(MREDM.fields.h_field.Rx.b1m,n1*n2*n3,[]);
         phimat = MREDM.fields.e_field.Rx.phi;
         phimat_coil = MREDM.fields.e_field.Rx.phi_coil;
-        phimat_lump = 0;%MREDM.fields.e_field.Rx.phi_lump;
+        phimat_lump = MREDM.fields.e_field.Rx.phi_lump;
+        if isfield(MREDM.fields.netp,'phi_lumped_elements')
+            phimat_lump = phimat_lump + MREDM.fields.netp.phi_lumped_elements.Rx;
+        end
     else
         B1m_3D = reshape(MREDM.fields.h_field.Tx.b1m,n1*n2*n3,[]);
         phimat = MREDM.fields.e_field.Tx.phi;
         phimat_coil = MREDM.fields.e_field.Tx.phi_coil;
-        phimat_lump = 0;%MREDM.fields.e_field.Tx.phi_lump;
+        phimat_lump = MREDM.fields.e_field.Tx.phi_lump;
+        if isfield(MREDM.fields.netp,'phi_lumped_elements')
+            phimat_lump = phimat_lump + MREDM.fields.netp.phi_lumped_elements.Tx;
+        end
     end
     A_ports = size(B1m_3D,2);
 

@@ -35,7 +35,7 @@ function[tuning_elements,...
     
     all_elements = all_matching_elements+tuning_elements+mutual_elements;
 
-    coil_entity = zeros(all_matching_elements+tuning_elements,all_matching_elements);
+    coil_entity = zeros(length(RLC_org),all_matching_elements);
     counter_ports = 1;
     for port_num = 1:length(RLC_org)
         if RLC_tmd(port_num).optim.boolean == 1 || (strcmp(RLC_org(port_num).type,'port') && RLC_tmd(port_num).optim.boolean == 0)
@@ -67,31 +67,31 @@ function[tuning_elements,...
             if strcmp(RLC_org(port_num).type,'port') && RLC_tmd(port_num).optim.boolean == 1
                 c2 = c2+1;
                 for j = 1:size(coil_entity,2)
-                    if coil_entity(port_num,j)>0
-                        matching_mask(c2,coil_entity(port_num,j)) = c1;
+                    if RLC_org(port_num).excitation.entity(j)>0
+                        matching_mask(c2,RLC_org(port_num).excitation.entity(j)) = c1;
                     end
                 end
             elseif strcmp(RLC_org(port_num).type,'port') && RLC_tmd(port_num).optim.boolean == 0
                 c5 = c5+1;
                 for j = 1:size(coil_entity,2)
-                    if coil_entity(port_num,j)>0
-                        fixed_matching_mask(c5,coil_entity(port_num,j)) = c1;
+                    if RLC_org(port_num).excitation.entity(j)>0
+                        fixed_matching_mask(c5,RLC_org(port_num).excitation.entity(j)) = c1;
                     end
                 end
             elseif strcmp(RLC_org(port_num).type,'element')
                 c3 = c3+1;
                 for j = 1:size(coil_entity,2)
-                    if coil_entity(port_num,j)>0
-                        tuning_mask(c3,coil_entity(port_num,j)) = c1;
+                    if RLC_org(port_num).excitation.entity(j)>0
+                        tuning_mask(c3,RLC_org(port_num).excitation.entity(j)) = c1;
                     end
                 end
                 if strcmp(RLC_org(port_num).load,'mutual_inductor')
                     if mod(mutual_mod,2)
                         c4 = c4+1;
                         for j = 1:size(coil_entity,2)
-                            if coil_entity(port_num,j)>0
-                                mutual_mask(c4,1,coil_entity(port_num,j)) = RLC_org(RLC_org(port_num).cross_talk(1)).cross_talk(1);
-                                mutual_mask(c4,2,coil_entity(port_num,j)) = RLC_org(port_num).cross_talk(1);
+                            if RLC_org(port_num).excitation.entity(j)>0
+                                mutual_mask(c4,1,RLC_org(port_num).excitation.entity(j)) = RLC_org(RLC_org(port_num).cross_talk(1)).cross_talk(1);
+                                mutual_mask(c4,2,RLC_org(port_num).excitation.entity(j)) = RLC_org(port_num).cross_talk(1);
                             end
                         end
                     end
@@ -106,9 +106,9 @@ function[tuning_elements,...
         if RLC_tmd(port_num).optim.boolean == 1 && strcmp(RLC_org(port_num).type,'element')
             c1 = c1+1;
             for j = 1:size(coil_entity,2)
-                if coil_entity(port_num,j)>0
-                    loads_all(c1,coil_entity(port_num,j))      = convertCharsToStrings(RLC_tmd(port_num).load);
-                    symmetries_tun(c1,coil_entity(port_num,j)) = RLC_tmd(port_num).optim.symmetry;
+                if RLC_org(port_num).excitation.entity(j)>0
+                    loads_all(c1,RLC_org(port_num).excitation.entity(j))      = convertCharsToStrings(RLC_tmd(port_num).load);
+                    symmetries_tun(c1,RLC_org(port_num).excitation.entity(j)) = RLC_tmd(port_num).optim.symmetry;
                 end
             end
             lower_bound(c1,1) = RLC_tmd(port_num).optim.minim;
@@ -123,9 +123,9 @@ function[tuning_elements,...
             if mod(mutual_mod,2)
                 c1 = c1+1;
                 for j = 1:size(coil_entity,2)
-                    if coil_entity(port_num,j)>0
-                        loads_all(c1,coil_entity(port_num,j))      = convertCharsToStrings('mutual_inductance_coefficient');
-                        symmetries_tun(c1,coil_entity(port_num,j)) = large_symmetry_counter+all_elements;
+                    if RLC_org(port_num).excitation.entity(j)>0
+                        loads_all(c1,RLC_org(port_num).excitation.entity(j))      = convertCharsToStrings('mutual_inductance_coefficient');
+                        symmetries_tun(c1,RLC_org(port_num).excitation.entity(j)) = large_symmetry_counter+all_elements;
                     end
                 end
                 k1                     = RLC_org(port_num).cross_talk(2)/sqrt(RLC_tmd(port_num).optim.maxim*RLC_tmd(RLC_org(port_num).cross_talk(1)).optim.maxim);

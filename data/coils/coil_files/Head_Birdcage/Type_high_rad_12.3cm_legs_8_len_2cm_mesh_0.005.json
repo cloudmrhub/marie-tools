@@ -8,6 +8,7 @@
         "type": "port",
         "load": "capacitorParallel_capacitorSeries",
         "value": [1.36661e-12, 7.69452e-12],
+        "Q": [500,500],
         "optim": {
           "boolean": 1,
           "minim": [5.0e-13, 3.0e-12],
@@ -25,6 +26,7 @@
         "type": "port",
         "load": "capacitorParallel_capacitorSeries",
         "value": [1.91424e-12, 7.31502e-12],
+        "Q": [500,500],
         "optim": {
           "boolean": 1,
           "minim": [5.0e-13, 3.0e-12],
@@ -42,6 +44,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -59,6 +62,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -76,6 +80,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -93,6 +98,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -110,6 +116,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -127,6 +134,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -144,6 +152,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -161,6 +170,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -178,6 +188,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -195,6 +206,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -212,6 +224,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -229,6 +242,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -246,6 +260,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],
@@ -263,6 +278,7 @@
         "type": "element",
         "load": "capacitor",
         "value": 1.0995e-11,
+        "Q": 500,
         "optim": {
           "boolean": 1,
           "minim": [5e-12],

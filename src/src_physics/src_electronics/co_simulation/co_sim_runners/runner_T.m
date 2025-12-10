@@ -28,15 +28,17 @@ function[elems_after_tuning,...
     elems_after_tuning = zeros(length(lower_bound),1);
     fval_min_return = inf*ones(max(coil_entity,[],'all'),1);
 
+    coil_entity_temp = nonzeros(coil_entity);
+
     if ~all(tuning_mask(:) == 0)
 
-        for i = 1:max(coil_entity,[],'all')
+        for i = 1:max(coil_entity_temp,[],'all')
 
             if isempty(unique_indices(i).id)
                 continue
             end
         
-            [y_ids,~]       = find(coil_entity == i);
+            [y_ids,~]       = find(coil_entity_temp == i);
             non_ids         = setdiff(1:size(YPn, 1), y_ids);
             YPn_to_pass     = YPn(y_ids,y_ids)-YPn(y_ids,non_ids)/YPn(non_ids,non_ids)*YPn(non_ids,y_ids);
             M               = nonzeros(matching_mask(:,i));

@@ -53,12 +53,15 @@ function LC = geo_scoil_lumped_elements(filename, tmd)
             % Value can be an array of capacitances/inductances
             if iscell(e.value)
                 LC(i).value = cellfun(@str2double, e.value);
+                LC(i).Q = cellfun(@str2double, e.Q);
             else
                 LC(i).value = e.value(:)';  % Ensure row vector
+                LC(i).Q = e.Q(:)';  % Ensure row vector
             end
         else
             LC(i).load = e.load;
             LC(i).value = e.value;
+            LC(i).Q = e.Q;
         end
 
         % ---------------------------

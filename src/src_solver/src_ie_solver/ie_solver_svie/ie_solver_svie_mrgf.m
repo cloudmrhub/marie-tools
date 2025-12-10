@@ -23,6 +23,8 @@ function[MREDM] = ie_solver_svie_mrgf(MREDM,U_hat_inv,S_hat_inv,V_hat_inv,X)
         ZbcN = [MREDM.operators.Zbs_N;
                 MREDM.operators.Zbw_N;
                 MREDM.operators.Zbc_N];
+
+        N_coil = dims.N_shield_sie + dims.N_sie + dims.N_wie;
     % Wire-Coil   
     elseif ~isempty(MREDM.WIE.coil) && ~isempty(MREDM.SIE.coil) && isempty(MREDM.SIE.shield)
         Zcc  = MREDM.SIE.Z;
@@ -33,6 +35,8 @@ function[MREDM] = ie_solver_svie_mrgf(MREDM,U_hat_inv,S_hat_inv,V_hat_inv,X)
 
         ZbcN = [MREDM.operators.Zbw_N;
                 MREDM.operators.Zbc_N];
+        
+        N_coil = dims.N_sie + dims.N_wie;
     % Coil-Shield
     elseif isempty(MREDM.WIE.coil) && ~isempty(MREDM.SIE.coil) && ~isempty(MREDM.SIE.shield)
         Zss  = MREDM.SIE.Z_shield;
@@ -43,12 +47,16 @@ function[MREDM] = ie_solver_svie_mrgf(MREDM,U_hat_inv,S_hat_inv,V_hat_inv,X)
 
         ZbcN = [MREDM.operators.Zbs_N;
                 MREDM.operators.Zbc_N];
+        
+        N_coil = dims.N_shield_sie + dims.N_sie;
     % Coil
     elseif isempty(MREDM.WIE.coil) && ~isempty(MREDM.SIE.coil) && isempty(MREDM.SIE.shield)
         Zcc  = MREDM.SIE.Z;
         Zall = Zcc;
 
         ZbcN = MREDM.operators.Zbc_N;
+        
+        N_coil = dims.N_sie;
     % Wire-Shield
     elseif ~isempty(MREDM.WIE.coil) && isempty(MREDM.SIE.coil) && ~isempty(MREDM.SIE.shield)
         Zss  = MREDM.SIE.Z_shield;
@@ -59,12 +67,16 @@ function[MREDM] = ie_solver_svie_mrgf(MREDM,U_hat_inv,S_hat_inv,V_hat_inv,X)
 
         ZbcN = [MREDM.operators.Zbs_N;
                 MREDM.operators.Zbw_N];
+        
+        N_coil = dims.N_shield_sie + dims.N_wie;
     % Wire
     elseif ~isempty(MREDM.WIE.coil) && isempty(MREDM.SIE.coil) && isempty(MREDM.SIE.shield)
         Zww  = MREDM.WIE.Z;
         Zall = Zww;
 
         ZbcN = MREDM.operators.Zbw_N;
+        
+        N_coil = dims.N_wie;
     end
 
     % MRGF Solution
