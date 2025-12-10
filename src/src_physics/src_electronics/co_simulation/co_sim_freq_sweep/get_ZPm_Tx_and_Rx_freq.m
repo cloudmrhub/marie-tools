@@ -104,8 +104,8 @@ function[figure_freq] = get_ZPm_Tx_and_Rx_freq(X,...
         Y_vals               = zeros(size(true_tuning_elements));
 
         Cap_loss             = omega_range(freq_id) .* true_tuning_elements(is_capacitor) .* Q_true_tuning_elements(is_capacitor);
-        Ind_loss             = 1 ./ (omega_range(freq_id) .* true_tuning_elements(is_inductor) .* Q_true_tuning_elements(is_inductor) );
-        MutInd_loss          = 1 ./ (omega_range(freq_id) .* true_tuning_elements(is_mutual_inductor) .* Q_true_tuning_elements(is_mutual_inductor) );
+        Ind_loss             = (omega_range(freq_id) .* true_tuning_elements(is_inductor) .* Q_true_tuning_elements(is_inductor) );
+        MutInd_loss          = (omega_range(freq_id) .* true_tuning_elements(is_mutual_inductor) .* Q_true_tuning_elements(is_mutual_inductor) );
         Cap_Value            = 1i * omega_range(freq_id) .* true_tuning_elements(is_capacitor);
         Ind_Value            = 1 ./ (1i * omega_range(freq_id) .* true_tuning_elements(is_inductor));
         MutInd_Value         = 1 ./ (1i*omega_range(freq_id) .* true_tuning_elements(is_mutual_inductor));
@@ -165,7 +165,7 @@ function[figure_freq] = get_ZPm_Tx_and_Rx_freq(X,...
                     E_lp = diag(1./(1i*omega_range(freq_id)*stage_elements(is_inductor_parallel_local)));    
                     E_rp = diag(1./(stage_elements(is_resistor_parallel_local)));    
                     Cap_loss  = diag(omega_range(freq_id) * stage_elements(is_capacitor_parallel_local) .* stage_elementsQ(is_capacitor_parallel_local) );
-                    Ind_loss  = diag(1./(omega_range(freq_id) * stage_elements(is_inductor_parallel_local).* stage_elementsQ(is_inductor_parallel_local) ));    
+                    Ind_loss  = diag((omega_range(freq_id) * stage_elements(is_inductor_parallel_local).* stage_elementsQ(is_inductor_parallel_local) ));    
   
                     if ~isempty(E_cp)
                         YPm_temp(k,k) = YPm_temp(k,k) + E_cp(k,k).*Cap_loss(k,k)./(E_cp(k,k)+Cap_loss(k,k));
@@ -181,7 +181,7 @@ function[figure_freq] = get_ZPm_Tx_and_Rx_freq(X,...
                     E_cs = diag(1./(1i*omega_range(freq_id)*stage_elements(is_capacitor_series_local))); 
                     E_ls = diag(1i*omega_range(freq_id)*stage_elements(is_inductor_series_local));    
                     E_rs = diag(stage_elements(is_resistor_series_local));    
-                    Cap_loss  = diag(1./(omega_range(freq_id) * stage_elements(is_capacitor_series_local).* stage_elementsQ(is_capacitor_series_local) ));   
+                    Cap_loss  = diag((omega_range(freq_id) * stage_elements(is_capacitor_series_local).* stage_elementsQ(is_capacitor_series_local) ));   
                     Ind_loss  = diag(omega_range(freq_id) * stage_elements(is_inductor_series_local) .* stage_elementsQ(is_inductor_series_local) ); 
                 
                     ZPm_temp = inv(YPm_temp);
@@ -226,7 +226,7 @@ function[figure_freq] = get_ZPm_Tx_and_Rx_freq(X,...
                 E_lp = diag(1./(1i*omega_range(freq_id)*stage_elements(is_inductor_parallel_local)));    
                 E_rp = diag(1./(stage_elements(is_resistor_parallel_local)));    
                 Cap_loss  = diag(omega_range(freq_id) * stage_elements(is_capacitor_parallel_local) .* stage_elementsQ(is_capacitor_parallel_local) );
-                Ind_loss  = diag(1./(omega_range(freq_id) * stage_elements(is_inductor_parallel_local).* stage_elementsQ(is_inductor_parallel_local) ));    
+                Ind_loss  = diag((omega_range(freq_id) * stage_elements(is_inductor_parallel_local).* stage_elementsQ(is_inductor_parallel_local) ));    
 
                 if ~isempty(E_cp)
                     YPm_Tx = YPm_Tx + E_cp.*Cap_loss./(E_cp+Cap_loss);
@@ -242,7 +242,7 @@ function[figure_freq] = get_ZPm_Tx_and_Rx_freq(X,...
                 E_cs = diag(1./(1i*omega_range(freq_id)*stage_elements(is_capacitor_series_local))); 
                 E_ls = diag(1i*omega_range(freq_id)*stage_elements(is_inductor_series_local));    
                 E_rs = diag(stage_elements(is_resistor_series_local));    
-                Cap_loss  = diag(1./(omega_range(freq_id) * stage_elements(is_capacitor_series_local).* stage_elementsQ(is_capacitor_series_local) ));   
+                Cap_loss  = diag((omega_range(freq_id) * stage_elements(is_capacitor_series_local).* stage_elementsQ(is_capacitor_series_local) ));   
                 Ind_loss  = diag(omega_range(freq_id) * stage_elements(is_inductor_series_local) .* stage_elementsQ(is_inductor_series_local) ); 
 
                 ZPm_Tx = inv(YPm_Tx);
