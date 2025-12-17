@@ -26,7 +26,7 @@ Each runner is a self-contained script that performs geometry assembly, matrix c
 | `MARIE_runner.m` | Executes the full **WSVIE** simulation.                                                     |
 | `BASIS_runner.m` | Generates an **elcectromangetic basis**, **UISNR** or the **ideal current patterns**, and the **MRGF**|
 | `MRGF_runner.m`  | Runs the **MRGF-based reduced-order WSVIE** for faster simulations                 |
-| `TMD_runner.m`   | Performs **automated tuning, matching, and decoupling** optimization of, based on Y parameters generated with external solvers (co-simulation is also performed for MARIE and MRGF runners by default)|
+| `TMD_runner.m`   | Performs **automated tuning, matching, decoupling, preamplifier decoupling, and detuning** optimization of receive, transmit, and transceive coils (and their combinations) based on pre-computed Y parameters with external solvers (co-simulation is also performed for MARIE and MRGF runners by default)|
 ---
 
 ### **3. 🗂 `data/` — Simulation Data**
@@ -60,7 +60,7 @@ doc/
    git clone https://github.com/cloudmrhub/marie-tools
    cd MARIE
    ```
-4. From MATLAB to install all c++ accelerated assembly routines
+4. From MATLAB to install all c++ routines
    ```
    startup.m
    installer.m
