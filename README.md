@@ -50,7 +50,7 @@ doc/
 
 ---
 
-## 🚀 **Getting Started**
+### 🚀 **Getting Started**
 
 1. Install MATLAB R2023a or later.
 2. **GMSH** (2.85) is provided with the repository (2.8.5).
@@ -75,11 +75,11 @@ doc/
 
 ---
 
-## ⚠️ **Disclaimer**
-This is an in-house electromagnetic simulator suire and it is intended for research purposes. While every effort has been made to ensure its quality, the code may contain bugs. We do not assume responsibility for any errors or issues resulting from the software's use. We strongly encourage the users to post any errors, warnings, questions, etc, in the Issues page, or send directly to the corresponding authors.
+### ⚠️ **Disclaimer**
+This is an in-house electromagnetic simulator suite and it is intended for research purposes. While every effort has been made to ensure its quality, the code may contain bugs. We do not assume responsibility for any errors or issues resulting from the software's use. We strongly encourage the users to post any errors, warnings, questions, etc, in the Issues page, or send directly to the corresponding authors.
 
 ---
 
-## 📃 **License**
+### 📃 **License**
 
 MARIE is released under the **MIT License**.
