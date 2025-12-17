@@ -1,6 +1,6 @@
 # **MARIE — Backend Tools**
 
-Visit the <a href="https://cmr.cloudmrhub.com/apps/marie/" target="_blank" rel="noopener noreferrer">project page</a> for more information about <strong>MARIE</strong>.
+Visit the [project page](https://cmr.cloudmrhub.com/apps/marie/) for more information about **MARIE**.
 
 ## ⚙️ **Repository Structure**
 
