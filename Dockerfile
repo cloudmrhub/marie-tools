@@ -28,8 +28,6 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 COPY bin/ /app/
 COPY data/ /app/data/
 
-RUN ln -sf /app/data/bodies /app/RHBM
-
 RUN chmod +x /app/*
 
 WORKDIR /app
