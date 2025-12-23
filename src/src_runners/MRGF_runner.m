@@ -12,7 +12,7 @@
 %
 % SYNTAX:
 %   Run directly in MATLAB:
-%       >> MRGF_runner
+%       >> MRGF_runner('input_file.json')
 %
 % DESCRIPTION:
 %   This script sequentially executes all major stages of the MRGF workflow:
@@ -58,9 +58,9 @@ clc
 % ---------------------------------------------------------------
 % Parse command-line arguments
 if nargin < 1 || ~isfile(input_file)
-    fprintf('[ERROR] Usage: MARIE_runner(''input_file.json'')\n');
-    fprintf('[ERROR] Example: MARIE_runner(''./data/inputs/inp_Duke_StadiumTriangular.json'')\n');
-    error('MARIE:FileNotFound', 'Valid input file is required. Exiting.');
+    fprintf('[ERROR] Usage: MRGF_runner(''input_file.json'')\n');
+    fprintf('[ERROR] Example: MRGF_runner(''./data/inputs/inp_Duke_StadiumTriangular.json'')\n');
+    error('MRGF:FileNotFound', 'Valid input file is required. Exiting.');
 end
 
 % ---------------------------------------------------------------
@@ -125,7 +125,7 @@ MREDM = em_ehfield_wsvie_mrgf(MREDM, Ue, Ub);  % Compute EM fields, SNR, TXE
 fprintf('Storing Fields ...\n');
 solution = MREDM.fields;
 
-[~, file_name, ext] = fileparts(input_file);
+[~, file_name, ~] = fileparts(input_file);
 save(fullfile('./data/solutions/', ...
      ['MRGF_', file_name, '.mat']), 'solution', '-v7.3');
 

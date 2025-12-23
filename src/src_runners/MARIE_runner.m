@@ -11,7 +11,7 @@
 %
 % SYNTAX:
 %   Run directly in MATLAB:
-%       >> MARIE_runner
+%       >> MARIE_runner('input_file.json')
 %
 % DESCRIPTION:
 %   This function sequentially executes all major stages of the MARIE workflow:
@@ -102,7 +102,7 @@ MREDM = em_ehfield_wsvie(MREDM);  % Compute EM fields, SNR, and TXE
 fprintf('Storing Fields ...\n');
 solution = MREDM.fields;
 
-[~, file_name, ext] = fileparts(input_file);
+[~, file_name, ~] = fileparts(input_file);
 save(fullfile('./data/solutions/', ...
      ['MARIE_', num2str(MREDM.inputs.tmd), '_', file_name, '.mat']), ...
      'solution', '-v7.3');
