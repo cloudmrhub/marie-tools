@@ -36,11 +36,20 @@ function [MREDM] = geo_ultimate_basis(MREDM)
 
     new_mask( (pad+1):(pad+n1), (pad+1):(pad+n2), (pad+1):(pad+n3) ) = mask;
 
-    disA    = imdilate(new_mask, strel('sphere', dis));
-    disThiA = imdilate(new_mask, strel('sphere', dis + thi));
+    % disA    = imdilate(new_mask, strel('sphere', dis));
+    % disThiA = imdilate(new_mask, strel('sphere', dis + thi));
 
+    obj0 = new_mask > 0;
+    obj = false(size(obj0));
+    for k = 1:size(obj0,3)
+        obj(:,:,k) = bwconvhull(obj0(:,:,k));
+    end
+    disA    = imdilate(obj, strel('sphere', dis));
+    disThiA = imdilate(obj, strel('sphere', dis + thi));
     maskB = imsubtract(disThiA, disA);
     maskB = bwareaopen(maskB, 1);
+    maskB = maskB & ~obj;
+
 
     r_basis = grid3d(x, y, z);
 
