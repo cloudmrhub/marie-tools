@@ -50,15 +50,13 @@ function[elems_after_matching,...
     elems_after_matching = zeros(length(unique_indices_all),1);
     fval_min_return = inf*ones(max(coil_entity,[],'all'),1);
 
-    coil_entity = nonzeros(coil_entity);
-
     for i = 1:max(coil_entity)
 
         if isempty(unique_indices(i).id)
             continue
         end
     
-        [y_ids,~]                          = find(coil_entity == i);
+        [y_ids,x_ids]                      = find(coil_entity == i);
         non_ids                            = setdiff(1:size(YPn, 1), y_ids);
         YPn_to_pass                        = YPn(y_ids,y_ids)-YPn(y_ids,non_ids)/YPn(non_ids,non_ids)*YPn(non_ids,y_ids);
         M_detailed                         = nonzeros(matching_mask_detailed(:,i));
