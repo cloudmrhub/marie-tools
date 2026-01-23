@@ -58,11 +58,11 @@ function[symmetries_all,...
                 for i = 1:length(convertCharsToStrings(RLC_org(port_num).load))
                     load_tmp = convertCharsToStrings(RLC_tmd(port_num).load);
                     for j = 1:size(coil_entity,2)
-                        if RLC_org(port_num).excitation.entity(j)>0
-                            matching_mask_detailed(c1+1,RLC_org(port_num).excitation.entity(j)) = c1+1;
-                            loads_matching(c3+1,RLC_org(port_num).excitation.entity(j))         = load_tmp(i);
-                            port_order(c3+1,RLC_org(port_num).excitation.entity(j))             = port_order_counter;
-                            symmetries(c1+1,RLC_org(port_num).excitation.entity(j))             = RLC_tmd(port_num).optim.symmetry+c1;
+                        if coil_entity(port_num,j)>0
+                            matching_mask_detailed(c1+1,coil_entity(port_num,j)) = c1+1;
+                            loads_matching(c3+1,coil_entity(port_num,j))         = load_tmp(i);
+                            port_order(c3+1,coil_entity(port_num,j))             = port_order_counter;
+                            symmetries(c1+1,coil_entity(port_num,j))             = RLC_tmd(port_num).optim.symmetry+c1;
                         end
                     end
                     symmetries_all(c1+1)  = RLC_tmd(port_num).optim.symmetry+c1;
@@ -78,11 +78,11 @@ function[symmetries_all,...
                     load_tmp = convertCharsToStrings(RLC_tmd(port_num).load);
                     value_tmp = RLC_tmd(port_num).value(i);
                     for j = 1:size(coil_entity,2)
-                        if RLC_org(port_num).excitation.entity(j)>0
-                            fixed_matching_mask_detailed(c1+1,RLC_org(port_num).excitation.entity(j)) = c1+1;
-                            loads_matching(c3+1,RLC_org(port_num).excitation.entity(j))               = load_tmp(i);
-                            fixed_matching_values(c1+1,RLC_org(port_num).excitation.entity(j))        = value_tmp;
-                            port_order(c3+1,RLC_org(port_num).excitation.entity(j))                   = port_order_counter;
+                        if coil_entity(port_num,j)>0
+                            fixed_matching_mask_detailed(c1+1,coil_entity(port_num,j)) = c1+1;
+                            loads_matching(c3+1,coil_entity(port_num,j))               = load_tmp(i);
+                            fixed_matching_values(c1+1,coil_entity(port_num,j))        = value_tmp;
+                            port_order(c3+1,coil_entity(port_num,j))                   = port_order_counter;
                         end
                     end
                     symmetries_all(c1+1) = RLC_tmd(port_num).optim.symmetry+c1;
@@ -94,10 +94,10 @@ function[symmetries_all,...
             elseif strcmp(RLC_org(port_num).type,'element')
                 c2 = c2 + 1;
                 for j = 1:size(coil_entity,2)
-                    if RLC_org(port_num).excitation.entity(j)>0
-                        tuning_mask_detailed(c1+1,RLC_org(port_num).excitation.entity(j)) = c1+1;
-                        loads_tuning(c2,RLC_org(port_num).excitation.entity(j))           = convertCharsToStrings(RLC_tmd(port_num).load);
-                        symmetries(c1+1,RLC_org(port_num).excitation.entity(j))           = RLC_tmd(port_num).optim.symmetry+t;
+                    if coil_entity(port_num,j)>0
+                        tuning_mask_detailed(c1+1,coil_entity(port_num,j)) = c1+1;
+                        loads_tuning(c2,coil_entity(port_num,j))           = convertCharsToStrings(RLC_tmd(port_num).load);
+                        symmetries(c1+1,coil_entity(port_num,j))           = RLC_tmd(port_num).optim.symmetry+t;
                     end
                 end
                 symmetries_all(c1+1)  = RLC_tmd(port_num).optim.symmetry+t;
@@ -121,10 +121,10 @@ function[symmetries_all,...
             if mod(mutual_mod,2)
                 c2 = c2 + 1;
                 for j = 1:size(coil_entity,2)
-                    if RLC_org(port_num).excitation.entity(j)>0
-                        loads_tuning(c1+1,RLC_org(port_num).excitation.entity(j))         = convertCharsToStrings('mutual_inductance_coefficient');
-                        mutual_mask_detailed(c1+1,RLC_org(port_num).excitation.entity(j)) = c1+1;
-                        symmetries(c1+1,RLC_org(port_num).excitation.entity(j))           = large_symmetry_counter+matching_element_counter+tuning_elements+mutual_elements;
+                    if coil_entity(port_num,j)>0
+                        loads_tuning(c1+1,coil_entity(port_num,j))         = convertCharsToStrings('mutual_inductance_coefficient');
+                        mutual_mask_detailed(c1+1,coil_entity(port_num,j)) = c1+1;
+                        symmetries(c1+1,coil_entity(port_num,j))           = large_symmetry_counter+matching_element_counter+tuning_elements+mutual_elements;
                     end
                 end
                 symmetries_all(c1+1) = large_symmetry_counter+matching_element_counter+tuning_elements+mutual_elements;
