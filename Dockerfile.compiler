@@ -1,0 +1,49 @@
+FROM ubuntu:22.04
+
+ARG RELEASE_VERSION=R2023a
+ARG INSTALL_LOCATION=/usr/local/MATLAB/${RELEASE_VERSION}
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PATH="${INSTALL_LOCATION}/bin:${PATH}"
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
+
+
+# Install only essential runtime dependencies for headless MATLAB
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    libasound2 \
+    libglib2.0-0 \
+    libglu1-mesa \
+    libgomp1 \
+    libncurses6 \
+    libsm6 \
+    libx11-6 \
+    libxext6 \
+    libxi6 \
+    libxmu6 \
+    libxrender1 \
+    libxt6 \
+    libxtst6 \
+    procps \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# Download and install MATLAB using mpm
+WORKDIR /tmp
+RUN wget -q https://www.mathworks.com/mpm/glnxa64/mpm \
+    && chmod +x mpm \
+    && ./mpm install \
+        --release=${RELEASE_VERSION} \
+        --destination=${INSTALL_LOCATION} \
+        --products MATLAB MATLAB_Compiler Parallel_Computing_Toolbox Optimization_Toolbox Global_Optimization_Toolbox \
+    && rm -f mpm \
+    && rm -rf /tmp/mathworks_downloads
+
+# Create non-root user for running MATLAB
+RUN useradd -m -s /bin/bash matlab
+USER matlab
+WORKDIR /home/matlab
+
+ENTRYPOINT ["matlab", "-licmode", "online", "-nodisplay", "-nosplash"]
+CMD ["-batch", "ver"]

@@ -6,15 +6,15 @@
 % ===============================================================
 %
 % PURPOSE:
-%   Main execution script for the WSVIE in MARIE 3.0. This runner executes 
+%   Main execution function for the WSVIE in MARIE 3.0. This runner executes 
 %   the full WSVIE simulation and co-simulation for the input MRI setup.
 %
 % SYNTAX:
 %   Run directly in MATLAB:
-%       >> MARIE_runner
+%       >> MARIE_runner('input_file.json')
 %
 % DESCRIPTION:
-%   This script sequentially executes all major stages of the MARIE workflow:
+%   This function sequentially executes all major stages of the MARIE workflow:
 %       1. Load user-defined input file
 %       2. Build geometry and discretizations
 %       3. Assemble WSVIE operators
@@ -42,17 +42,23 @@
 %     otherwise it is used as external excitation
 %   - The final solution is stored under ./data/solutions/
 
+function MARIE_runner(input_file)
+
 % ---------------------------------------------------------------
 % STEP 0: Initialize Environment
 % ---------------------------------------------------------------
 close all
-clearvars
 clc
 
 % ---------------------------------------------------------------
 % STEP 1: Specify Input File
 % ---------------------------------------------------------------
-input_file = 'inp_Duke_ProstateLinacCoil.json';  % Input file name
+% Parse command-line arguments
+if nargin < 1 || ~isfile(input_file)
+    fprintf('[ERROR] Usage: MARIE_runner(''input_file.json'')\n');
+    fprintf('[ERROR] Example: MARIE_runner(''./data/inputs/inp_Duke_StadiumTriangular.json'')\n');
+    error('MARIE:FileNotFound', 'Valid input file is required. Exiting.');
+end
 
 % ---------------------------------------------------------------
 % STEP 2: Load Inputs
@@ -96,12 +102,14 @@ MREDM = em_ehfield_wsvie(MREDM);  % Compute EM fields, SNR, and TXE
 fprintf('Storing Fields ...\n');
 solution = MREDM.fields;
 
+[~, file_name, ~] = fileparts(input_file);
 save(fullfile('./data/solutions/', ...
-     ['MARIE_', num2str(MREDM.inputs.tmd), '_', input_file(1:end-4), '.mat']), ...
+     ['MARIE_', num2str(MREDM.inputs.tmd), '_', file_name, '.mat']), ...
      'solution', '-v7.3');
 
 fprintf('\n[MARIE 3.0] Simulation completed successfully.\n');
 fprintf('[Saved] - ./data/solutions/MARIE_%d_%s.mat\n', ...
-        MREDM.inputs.tmd, input_file(1:end-4));
+        MREDM.inputs.tmd, file_name);
 
+end
 % ============================= END OF FILE =============================

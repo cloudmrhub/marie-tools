@@ -2,6 +2,9 @@ clc
 clearvars
 close all
 
+fprintf('Compiling MEX files...\n');
+fprintf('------------------------------------------------------\n');
+
 FLAGS=cell(0,1);
 FLAGS{end+1}='-funroll-loops -fopenmp -std=c++17 -fPIC -lgomp';
 FLAGS{end+1}='-fconstexpr-depth=100000 -ftemplate-depth=100000';
