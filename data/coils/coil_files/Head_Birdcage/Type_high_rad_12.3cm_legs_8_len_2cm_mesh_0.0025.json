@@ -8,8 +8,8 @@
         "type": "port",
         "load": "capacitorParallel_capacitorSeries",
         "value": [
-          6.7444011811394953E-10,
-          3.2580362768239722E-9
+          2.3774589512104295E-13,
+          1.1255191503330255E-11
         ],
         "optim": {
           "boolean": 1,
@@ -38,8 +38,8 @@
         "type": "port",
         "load": "capacitorParallel_capacitorSeries",
         "value": [
-          1.78528785849326E-13,
-          8.20609242363654E-12
+          1.0143663726444253E-13,
+          1.1137963032358617E-11
         ],
         "optim": {
           "boolean": 1,
@@ -67,7 +67,7 @@
         "number": 3,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -88,7 +88,7 @@
         "number": 4,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -109,7 +109,7 @@
         "number": 5,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -130,7 +130,7 @@
         "number": 6,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -151,7 +151,7 @@
         "number": 7,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -172,7 +172,7 @@
         "number": 8,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -193,7 +193,7 @@
         "number": 9,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -214,7 +214,7 @@
         "number": 10,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -235,7 +235,7 @@
         "number": 11,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -256,7 +256,7 @@
         "number": 12,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -277,7 +277,7 @@
         "number": 13,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -298,7 +298,7 @@
         "number": 14,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -319,7 +319,7 @@
         "number": 15,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
@@ -340,7 +340,7 @@
         "number": 16,
         "type": "element",
         "load": "capacitor",
-        "value": 1.1043173000551995E-11,
+        "value": 1.4705626377474446E-11,
         "optim": {
           "boolean": 1,
           "minim": 5E-12,
