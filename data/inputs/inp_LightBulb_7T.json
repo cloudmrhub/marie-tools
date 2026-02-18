@@ -1,0 +1,12 @@
+{
+  "B0": 7.0,
+  "Nucleus": "1H",
+  "Basis_Functions_VIE": 1,
+  "BodyFile": "Scatterers/4mm/Lightbulb_3T.mat",
+  "CoilFile": "",
+  "WireFile": "Head_Receivers/Head_Receive_Array_1_Coil.msh",
+  "ShieldFile": "",
+  "SurfaceBasisSupportFile": "",
+  "TMD": 0,
+  "BasisFile": "Lightbulb_4mm_PWL_3T.mat"
+}
