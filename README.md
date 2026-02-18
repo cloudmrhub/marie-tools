@@ -62,10 +62,10 @@ doc/
    ```
 4. From MATLAB to install all c++ routines
    ```
-   startup.m
    installer.m
+   startup.m
    ```
-5. Run your first simulation:
+5. Run simulations from the home directory:
 
    ```matlab
    MARIE_runner
@@ -75,11 +75,19 @@ doc/
 
 ---
 
+## 💬 **Acknowledgments**
+
+This work is supported in part by **NIH K99 EB035163**, **NIH R01 EB036483**, and **NIH R01 EB024536**, and performed under the **Center for Advanced Imaging Innovation and Research (CAI²R)**, an NIH P41 National Center for Biomedical Imaging and Bioengineering (P41 EB017183).
+
+---
+
 ## ⚠️ **Disclaimer**
-This is an in-house electromagnetic simulator suite and it is intended for research purposes. While every effort has been made to ensure its quality, the code may contain bugs. We do not assume responsibility for any errors or issues resulting from the software's use. We strongly encourage the users to post any errors, warnings, questions, etc, in the Issues page, or send directly to the corresponding authors.
+This is an in-house electromagnetic simulator suite and it is intended for research purposes. While every effort has been made to ensure its quality, the code may contain bugs. We do not assume responsibility for any errors or issues resulting from the software's use. We strongly encourage the users to post any errors, warnings, questions, etc, in the Issues page, or send directly to the corresponding author (mailto:ilias.giannakopoulos@nyulangone.org).
 
 ---
 
 ## 📃 **License**
 
-MARIE is released under the **MIT License**.
+MARIE is released under the **MIT License**. 
+Please cite the following publication when using this software in academic or commercial work:
+Giannakopoulos, Ilias I., et al. "An Open‐Source Software Toolbox for Rapid Radiofrequency Coil Design and Evaluation in MRI." Magnetic Resonance in Medicine (2026)
