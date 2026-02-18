@@ -79,8 +79,8 @@ function [MREDM] = load_inputs(input_file)
     inputs.Np_1D_medium_V      = 8;  % VIE adjacent terms
     inputs.Np_1D_near_S        = 15; % VIE self-terms
     inputs.Quad_order_wie_coup = 4;  % WVIE and WSIE
-    inputs.Quad_order_sie      = 10;  % SVIE and WSIE
-    inputs.Quad_order_vie      = 8;  % WVIE and SVIE
+    inputs.Quad_order_sie      = 4;  % SVIE and WSIE
+    inputs.Quad_order_vie      = 2;  % WVIE and SVIE
     inputs.N_NS                = 4;  % WVIE and SVIE
     inputs.N_ST_psi            = 10; % SIE self-terms
     inputs.N_EA_theta          = 6;  % SIE edge-terms
@@ -94,8 +94,6 @@ function [MREDM] = load_inputs(input_file)
     inputs.rSVD_blocksize  = 1000;   % Block size for randomized SVD
     
     inputs.pFFT_flag = 1;  % Enable precorrected FFT acceleration
-    inputs.FMM_flag  = 0;  % (experimental) enables acceleration of WVIE with multichannel arrays. 
-                           % Set to 0 for all other cases.
     
     MREDM.inputs    = inputs;                   % Store all parameters
     MREDM.emc       = em_constants(inputs.B0,inputs.nucleus);  % Electromagnetic constants
