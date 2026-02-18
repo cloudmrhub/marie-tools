@@ -19,7 +19,7 @@ function [MREDM] = vie_assembly(MREDM,geo_flag)
             N  = MREDM.functions.fft_circ(N,MREDM,n1,n2,n3);
             K  = assembly_K(MREDM,n1,n2,n3); 
             K  = MREDM.functions.fft_circ(K,MREDM,n1,n2,n3);
-        elseif ~isempty(MREDM.WIE.coil) || ~isempty(MREDM.SIE.coil)
+        elseif ~isempty(MREDM.WIE.coil) || ~isempty(MREDM.SIE.coil) 
             pfft_n1        = MREDM.dimensions.pfft_n1;
             pfft_n2        = MREDM.dimensions.pfft_n2;
             pfft_n3        = MREDM.dimensions.pfft_n3;
@@ -35,7 +35,7 @@ function [MREDM] = vie_assembly(MREDM,geo_flag)
             pfft_K         = MREDM.functions.fft_circ(pfft_K,MREDM,pfft_n1,pfft_n2,pfft_n3);
             pfft_k         = MREDM.functions.fft_circ(pfft_k,MREDM,pfft_kernel_n1,pfft_kernel_n2,pfft_kernel_n3);
         end
-    elseif geo_flag == 2 || geo_flag == 3
+    elseif geo_flag == 2 || geo_flag == 3 || ~MREDM.inputs.pFFT_flag 
         n1 = MREDM.dimensions.n1;
         n2 = MREDM.dimensions.n2;
         n3 = MREDM.dimensions.n3;
