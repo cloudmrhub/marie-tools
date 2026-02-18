@@ -72,15 +72,18 @@ function [r_ext, ext_mask] = pfft_extend_vie_domain(x_3d, y_3d, z_3d, x, y, z, r
     [Xext, Yext, Zext] = ndgrid(x_ext, y_ext, z_ext);
     r_ext = cat(4, Xext, Yext, Zext);
 
-    %% Map original mask into extended domain
-    xb_min = min(x);  xb_max = max(x);
-    yb_min = min(y);  yb_max = max(y);
-    zb_min = min(z);  zb_max = max(z);
+    %% Map original mask into extended domain (robust integer alignment)
 
-    idx_vie_x = (x_ext >= xb_min - res/3) & (x_ext <= xb_max + res/3);
-    idx_vie_y = (y_ext >= yb_min - res/3) & (y_ext <= yb_max + res/3);
-    idx_vie_z = (z_ext >= zb_min - res/3) & (z_ext <= zb_max + res/3);
-
+    % starting indices of body grid inside extended grid
+    ix0 = round((x(1) - x_ext(1)) / res) + 1;
+    iy0 = round((y(1) - y_ext(1)) / res) + 1;
+    iz0 = round((z(1) - z_ext(1)) / res) + 1;
+    
+    % ending indices
+    ix1 = ix0 + length(x) - 1;
+    iy1 = iy0 + length(y) - 1;
+    iz1 = iz0 + length(z) - 1;
+    
     ext_mask = zeros(length(x_ext), length(y_ext), length(z_ext));
-    ext_mask(idx_vie_x, idx_vie_y, idx_vie_z) = mask;
+    ext_mask(ix0:ix1, iy0:iy1, iz0:iz1) = mask;
 end
