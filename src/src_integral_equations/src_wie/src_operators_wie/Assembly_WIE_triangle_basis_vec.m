@@ -349,7 +349,7 @@ function [Z,Z_losses] = Assembly_WIE_triangle_basis_vec(wire,a,order,emc)
     Z = sc_const*(Z + Z.' - diag(diag(Z)));
     Rw = (1/emc.se_copper)/(pi*(2*a-emc.skin_depth)*emc.skin_depth);
     % Z_losses = Rw*diag(sqrt(diag(Dl*Dl.')));
-    Z_losses = spdiags(Rw*abs(Dl), 0, n, n);
+    Z_losses = spdiags(Rw*abs(Dl+Dr)/3, 0, n, n);
     Z = Z + Z_losses; 
 
 end
