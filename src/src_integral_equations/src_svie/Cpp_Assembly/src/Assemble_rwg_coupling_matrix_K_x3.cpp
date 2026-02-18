@@ -12,6 +12,8 @@ using std::cout;
 using std::endl;
 using dcomplex = std::complex <double>;
 using namespace std;
+
+constexpr double PI = 3.141592653589793238462643383279502884;
   
 void get_source_coords_mat(double * r_v, double * r_2, double * r_3, double * sie_quads, double * z_sie, double * rho, const size_t Np_sie, const size_t N_rwg, int sign);
 double vec_norm_l2(double * r);
@@ -26,12 +28,12 @@ void  Assemble_rwg_coupling_matrix_K_x3(mxComplexDouble * Zbc_Nop, double * Scoo
     const size_t Np_vie = vie_quads[0];
 
     // get scaling constants 
-    double mu_0 = 4 * M_PI * 1e-7;
+    double mu_0 = 4 * PI * 1e-7;
     double c_0  = 299792458;
     double e_0  = 1.0 / c_0 / c_0 / mu_0; 
     dcomplex ce = dcomplex(0.0,1.0) * ko * c_0 * e_0;
-    dcomplex em_scaling = - 1.0 / ce / 4.0 / M_PI;
-    dcomplex m_scaling = - 1.0 / 4.0 / M_PI;
+    dcomplex em_scaling = - 1.0 / ce / 4.0 / PI;
+    dcomplex m_scaling = - 1.0 / 4.0 / PI;
             
     // allocate memory for quadrature points for positive and negative triangles 
     double * r_src_p   = new double[N3 * Np_sie * N_rwg];
