@@ -1,6 +1,6 @@
 {
   "coil_configuration": {
-    "name": "Head_Receive_Array_1_Coil.json",
+    "name": "Head_Receive_Array_1_Coil_4ports.json",
     "tmd": "false",
     "elements": [
       {
@@ -8,14 +8,9 @@
         "type": "port",
         "load": "capacitorParallel_inductorSeries_capacitorParallel",
         "value": [
-          1.103415467183614E-10,
-          1.2081572078224119E-8,
-          1.3400001375323259E-12
-        ],
-        "Q": [
-          50000,
-          20000,
-          50000
+          2.1483924693614108E-11,
+          5.0055841355251826E-8,
+          1.1197595978319765E-10
         ],
         "optim": {
           "boolean": 1,
@@ -35,61 +30,66 @@
         "excitation": {
           "entity": 1,
           "TxRx": "Rx"
-        }
+        },
+        "Q": [
+          5000,
+          2000,
+          5000
+        ]
       },
       {
         "number": 2,
         "type": "element",
         "load": "capacitor",
-        "value": 1.4581242726460932E-11,
-        "Q": 50000,
+        "value": 7.5989247295529527E-12,
         "optim": {
           "boolean": 1,
-          "minim": 5.02E-12,
-          "maxim": 5.02E-10,
+          "minim": 5.02E-13,
+          "maxim": 5.02E-11,
           "symmetry": 2
         },
         "cross_talk": {},
         "excitation": {
           "entity": 1,
           "TxRx": "Rx"
-        }
+        },
+        "Q": 5000
       },
       {
         "number": 3,
         "type": "element",
         "load": "capacitor",
-        "value": 1.4581242726460932E-11,
-        "Q": 50000,
+        "value": 7.5989247295529527E-12,
         "optim": {
           "boolean": 1,
-          "minim": 5.02E-12,
-          "maxim": 5.02E-10,
+          "minim": 5.02E-13,
+          "maxim": 5.02E-11,
           "symmetry": 2
         },
         "cross_talk": {},
         "excitation": {
           "entity": 1,
           "TxRx": "Rx"
-        }
+        },
+        "Q": 5000
       },
       {
         "number": 4,
         "type": "element",
         "load": "capacitor",
-        "value": 1.4581242726460932E-11,
-        "Q": 50000,
+        "value": 7.5989247295529527E-12,
         "optim": {
           "boolean": 1,
-          "minim": 5.02E-12,
-          "maxim": 5.02E-10,
+          "minim": 5.02E-13,
+          "maxim": 5.02E-11,
           "symmetry": 2
         },
         "cross_talk": {},
         "excitation": {
           "entity": 1,
           "TxRx": "Rx"
-        }
+        },
+        "Q": 5000
       }
     ]
   }
