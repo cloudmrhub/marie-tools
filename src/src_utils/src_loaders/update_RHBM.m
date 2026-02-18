@@ -11,7 +11,7 @@ function [MREDM] = update_RHBM(MREDM)
 
     % Update File's Name
     idx = find(MREDM.inputs.rhbm == '/', 1, 'last');
-    MREDM.inputs.rhbm = [MREDM.inputs.rhbm(1:idx) RHBM.name '.mat'];
+    MREDM.inputs.rhbm = ['./data/bodies/' MREDM.inputs.rhbm(1:idx) RHBM.name '.mat'];
 
     % Save Master File
     save(MREDM.inputs.rhbm, 'RHBM');

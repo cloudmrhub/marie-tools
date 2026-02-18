@@ -120,9 +120,9 @@ fprintf('Storing Fields ...\n');
 solution = MREDM.fields;
 
 save(fullfile('./data/solutions/', ...
-     ['MRGF_', input_file(1:end-4), '.mat']), 'solution', '-v7.3');
+     ['MRGF_', input_file(1:end-5), '.mat']), 'solution', '-v7.3');
 
 fprintf('\n[MARIE 3.0] MRGF simulation completed successfully.\n');
-fprintf('[Saved] - ./data/solutions/MRGF_%s.mat\n', input_file(1:end-4));
+fprintf('[Saved] - ./data/solutions/MRGF_%s.mat\n', input_file(1:end-5));
 
 % ============================= END OF FILE =============================

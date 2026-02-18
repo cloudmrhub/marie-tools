@@ -52,7 +52,7 @@ clc
 % ---------------------------------------------------------------
 % STEP 1: Specify Input File
 % ---------------------------------------------------------------
-input_file = 'inp_Duke_ProstateLinacCoil.json';  % Input file name
+input_file = 'inp_MSphere_HeadCoil1z.json';  % Input file name
 
 % ---------------------------------------------------------------
 % STEP 2: Load Inputs
@@ -97,11 +97,11 @@ fprintf('Storing Fields ...\n');
 solution = MREDM.fields;
 
 save(fullfile('./data/solutions/', ...
-     ['MARIE_', num2str(MREDM.inputs.tmd), '_', input_file(1:end-4), '.mat']), ...
+     ['MARIE_', num2str(MREDM.inputs.tmd), '_', input_file(1:end-5), '.mat']), ...
      'solution', '-v7.3');
 
 fprintf('\n[MARIE 3.0] Simulation completed successfully.\n');
 fprintf('[Saved] - ./data/solutions/MARIE_%d_%s.mat\n', ...
-        MREDM.inputs.tmd, input_file(1:end-4));
+        MREDM.inputs.tmd, input_file(1:end-5));
 
 % ============================= END OF FILE =============================

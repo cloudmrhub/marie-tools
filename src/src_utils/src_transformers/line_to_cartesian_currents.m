@@ -1,13 +1,14 @@
 function [j_cart,S_point] = line_to_cartesian_currents(Jw,filename)
 
-    S = load(filename,'-ascii');
-    loop_start       = find(squeeze(S(:,8))==1);
-    loop_end         = find(squeeze(S(:,8))==2);
-    F_point          = S(:,1:3);
-    S_point          = S(:,4:6);
-    T_point          = S(2:end,4:6);
+    [~,...
+    loop_start,...
+    loop_end,...
+    F_point,...
+    S_point,...
+    T_point] = Mesh_Wire(filename);
     loop_start = loop_start(:).';  
     loop_end   = loop_end(:).';
+
     for i = 1:numel(loop_start)
         s = loop_start(i);
         e = loop_end(i);

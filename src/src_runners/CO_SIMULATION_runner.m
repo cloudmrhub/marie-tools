@@ -141,9 +141,9 @@ MREDM.fields.M_cal             = M_cal;
 fprintf('Storing Co-simulation Results ...\n');
 solution = MREDM.fields;
 save(fullfile('./data/solutions/', ...
-     ['CoSimulation_', coil_file_inp(1:end-4), '.mat']), 'solution', '-v7.3');
+     ['CoSimulation_', coil_file_inp(1:end-5), '.mat']), 'solution', '-v7.3');
 
 fprintf('\n[MARIE 3.0] Standalone Co-simulation completed successfully.\n');
-fprintf('[Saved] - ./data/solutions/CoSimulation_%s.mat\n', coil_file_inp(1:end-4));
+fprintf('[Saved] - ./data/solutions/CoSimulation_%s.mat\n', coil_file_inp(1:end-5));
 
 % ============================= END OF FILE =============================
