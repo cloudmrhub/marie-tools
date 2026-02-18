@@ -6,8 +6,8 @@ function [MREDM] = geo_ultimate_basis(MREDM)
     n3  = MREDM.dimensions.n3;
     res = MREDM.dimensions.res;
 
-    dis = inp.Basis_distance;   
-    thi = inp.Basis_thickness;  
+    dis = inp.Basis_distance;
+    thi = inp.Basis_thickness;
 
     dis = floor(dis/res);
 
@@ -15,11 +15,11 @@ function [MREDM] = geo_ultimate_basis(MREDM)
 
     mask = MREDM.dimensions.mask;
 
-    r = MREDM.dimensions.r; 
+    r = MREDM.dimensions.r;
 
-    x0 = squeeze(r(:,1,1,1));   
-    y0 = squeeze(r(1,:,1,2));  
-    z0 = squeeze(r(1,1,:,3));   
+    x0 = squeeze(r(:,1,1,1));
+    y0 = squeeze(r(1,:,1,2));
+    z0 = squeeze(r(1,1,:,3));
 
     y0 = y0(:).';
     z0 = z0(:).';
