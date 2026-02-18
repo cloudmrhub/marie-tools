@@ -3,6 +3,8 @@ function [MREDM,N_coil] = geo_recompute_domain(MREDM,geo_flag)
     inp = MREDM.inputs;
     
     MREDM = geo_body_domain(MREDM);
+
+    N_coil = 0;
     
     if ~isempty(inp.coil) && isempty(inp.wire)
         if inp.pFFT_flag && geo_flag == 1 
