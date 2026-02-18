@@ -1,100 +1,72 @@
-function [g_ax, g_cor, g_sag] = em_g_factor(Phi, b1, cut_ax, cut_cor, cut_sag, Rf, Rp)
-% b1:  n1 x n2 x n3 x nc  (B1-)
-% Phi: nc x nc  (noise covariance, possibly not PSD)
-% Rf, Rp: accelerations along 1st and 2nd in-plane directions
+function [ginv_ax,ginv_cr,ginv_sg] = em_g_factor(phimat,b1minus,mask,cut_ax,cut_cr,cut_sg,Rp,Rf)
 
-    [n1,n2,n3,nc] = size(b1);
+    phimat(phimat == diag(phimat)) = real(diag(phimat));
+    L = chol(phimat,'lower');
 
-    % Symmetrize Phi and project to PSD
-    Phi = (Phi + Phi')/2;
-    [V,D] = eig(real(Phi));
-    d = diag(D);
-    d(d < 0) = 0;
-    Phi_psd = V*diag(d)*V';
-    Phi_psd = Phi_psd + 1e-12*eye(nc);  % small jitter
-    L = chol(Phi_psd,'lower');
+    b1_ax               = permute(squeeze(b1minus(:,:,cut_ax,:)),[3 2 1]);
+    mask_ax             = permute(squeeze(mask(:,:,cut_ax)),[2 1]);
+    [nc,np_ax,nf_ax]    = size(b1_ax);
+    b1_ax               = reshape(b1_ax,[nc np_ax*nf_ax]);
+    b1map_ax            = L\b1_ax(:,:);
+    b1map_ax            = reshape(b1map_ax,nc,np_ax,nf_ax);
+    
+    b1_cr               = permute(squeeze(b1minus(:,cut_cr,:,:)),[3 2 1]);
+    mask_cr             = permute(squeeze(mask(:,cut_cr,:)),[2 1]);
+    [~,np_cr,nf_cr] = size(b1_cr);
+    b1_cr               = reshape(b1_cr,[nc np_cr*nf_cr]);
+    b1map_cr            = L\b1_cr(:,:);
+    b1map_cr            = reshape(b1map_cr,nc,np_cr,nf_cr);
+    
+    b1_sg               = permute(squeeze(b1minus(cut_sg,:,:,:)),[3 2 1]);
+    mask_sg             = permute(squeeze(mask(cut_sg,:,:)),[2 1]);
+    [~,np_sg,nf_sg] = size(b1_sg);
+    b1_sg               = reshape(b1_sg,[nc np_sg*nf_sg]);
+    b1map_sg            = L\b1_sg(:,:);
+    b1map_sg            = reshape(b1map_sg,nc,np_sg,nf_sg);
 
-    % Axial: x-y plane at z = cut_ax
-    if ~isempty(cut_ax) && cut_ax >= 1 && cut_ax <= n3
-        b1_ax = squeeze(b1(:,:,cut_ax,:));     % n1 x n2 x nc
-        g_ax  = local_g_slice(b1_ax, L, Rf, Rp);
-    else
-        g_ax = [];
-    end
+    g_ax = zeros(np_ax,nf_ax);
+    g_cr = zeros(np_cr,nf_cr);
+    g_sg = zeros(np_sg,nf_sg);
 
-    % Sagittal: y-z plane at x = cut_sag
-    if ~isempty(cut_sag) && cut_sag >= 1 && cut_sag <= n1
-        b1_sag = squeeze(b1(cut_sag,:,:,:));   % n2 x n3 x nc
-        g_sag  = local_g_slice(b1_sag, L, Rf, Rp);
-    else
-        g_sag = [];
-    end
-
-    % Coronal: x-z plane at y = cut_cor
-    if ~isempty(cut_cor) && cut_cor >= 1 && cut_cor <= n2
-        b1_cor = squeeze(b1(:,cut_cor,:,:));   % n1 x n3 x nc
-        g_cor  = local_g_slice(b1_cor, L, Rf, Rp);
-    else
-        g_cor = [];
-    end
-end
-
-function g = local_g_slice(b1_slice, L, Rf, Rp)
-% b1_slice: nf x np x nc  for a single slice
-
-    [nf,np,nc] = size(b1_slice);
-
-    if mod(nf,Rf) ~= 0 || mod(np,Rp) ~= 0
-        error('nf and np must be divisible by Rf and Rp.');
-    end
-
-    % --- Whitening ---
-    tmp = permute(b1_slice, [3 2 1]);     
-    tmp = reshape(tmp, nc, np*nf);        
-    tmp = L \ tmp;                        
-    tmp = reshape(tmp, nc, np, nf);       
-    b1w = permute(tmp, [3 2 1]);          
-
-    Nf_red = nf / Rf;
-    Np_red = np / Rp;
-    Rtot   = Rf * Rp;
-
-    g = zeros(nf,np);
-
-    for qx = 0:(Nf_red-1)
-        full_x = qx + 1 + (0:Rf-1)*Nf_red;
-
-        for qy = 0:(Np_red-1)
-            full_y = qy + 1 + (0:Rp-1)*Np_red;
-
-            Rloc = numel(full_x) * numel(full_y);
-            S = zeros(nc, Rloc);
-            coords = zeros(Rloc,2);
-            t = 0;
-
-            for kx = 1:numel(full_x)
-                ix = full_x(kx);
-                for ky = 1:numel(full_y)
-                    iy = full_y(ky);
-                    t = t + 1;
-                    S(:,t) = squeeze(b1w(ix,iy,:)).';
-                    coords(t,:) = [ix,iy];
-                end
-            end
-
-            % ----- FIX: STABLE INVERSION -----
-            A = S' * S;
-            eps_reg = 1e-10 * trace(A) / size(A,1);
-            Areg = A + eps_reg*eye(size(A));
-            Ainv = Areg \ eye(size(A));
-
-            for j = 1:Rloc
-                g_val = sqrt(real(Ainv(j,j) * Areg(j,j) / Rtot));
-                ix = coords(j,1);
-                iy = coords(j,2);
-                g(ix,iy) = g_val;
-            end
+    for x=1:floor(nf_ax./Rf)
+        for y=1:floor(np_ax./Rp)
+            s_temp=squeeze(b1map_ax(:,y:floor(np_ax./Rp):np_ax,x:floor(nf_ax./Rf):nf_ax));  
+            s = reshape(s_temp,[nc size(s_temp,2)*size(s_temp,3)]);
+            g_ax(y:floor(np_ax./Rp):np_ax,x:floor(nf_ax./Rf):nf_ax) = ...
+                reshape(sqrt(abs(diag(pinv(s'*s)).*diag(s'*s))),[size(s_temp,2) size(s_temp,3)]);   
         end
     end
+
+    for x=1:floor(nf_cr./Rf)
+        for y=1:floor(np_cr./Rp)
+            s_temp=squeeze(b1map_cr(:,y:floor(np_cr./Rp):np_cr,x:floor(nf_cr./Rf):nf_cr));  
+            s = reshape(s_temp,[nc size(s_temp,2)*size(s_temp,3)]);
+            g_cr(y:floor(np_cr./Rp):np_cr,x:floor(nf_cr./Rf):nf_cr) = ...
+                reshape(sqrt(abs(diag(pinv(s'*s)).*diag(s'*s))),[size(s_temp,2) size(s_temp,3)]);   
+        end
+    end
+
+    for x=1:floor(nf_sg./Rf)
+        for y=1:floor(np_sg./Rp)
+            s_temp=squeeze(b1map_sg(:,y:floor(np_sg./Rp):np_sg,x:floor(nf_sg./Rf):nf_sg));  
+            s = reshape(s_temp,[nc size(s_temp,2)*size(s_temp,3)]);
+            g_sg(y:floor(np_sg./Rp):np_sg,x:floor(nf_sg./Rf):nf_sg) = ...
+                reshape(sqrt(abs(diag(pinv(s'*s)).*diag(s'*s))),[size(s_temp,2) size(s_temp,3)]);   
+        end
+    end
+
+    g_ax = g_ax.*mask_ax;
+    ginv_ax = (1./g_ax).*mask_ax;
+
+    g_cr = g_cr.*mask_cr;
+    ginv_cr = (1./g_cr).*mask_cr;
+
+    g_sg = g_sg.*mask_sg;
+    ginv_sg = (1./g_sg).*mask_sg;
+
+    ginv_ax = ginv_ax.';
+    ginv_cr = ginv_cr.';
+    ginv_sg = ginv_sg.';
+
 end
 
