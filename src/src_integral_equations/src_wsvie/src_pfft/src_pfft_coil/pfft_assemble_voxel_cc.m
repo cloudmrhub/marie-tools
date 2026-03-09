@@ -52,11 +52,20 @@ function [pfft_Z_cc] = pfft_assemble_voxel_cc(MREDM,pfft_PS,Zcc,N_coil)
         Jc_pfft               = pfft_PS * Jcb(:,i_coil);
         Jc_near               = zeros(N_near_dofs,1);
         Jc_near(idx_exp_near) = Jc_pfft(idx_exp_pfft);
-
-        Jc_near_gpu    = reshape(gpuArray(Jc_near),[pfft_kernel_n1 pfft_kernel_n2 pfft_kernel_n3 ql]);
-        Jout_near_gpu  = MREDM.functions.mvp_N(Jc_near_gpu,pfft_n);
-        G_J            = MREDM.functions.mvp_G(Jc_near_gpu,res);
-        Ec_near        = gather(Jout_near_gpu - G_J);
+        
+        try 
+            gpu_flag       = 0;
+            Jc_near_gpu    = reshape(to_GPU(Jc_near,gpu_flag),[pfft_kernel_n1 pfft_kernel_n2 pfft_kernel_n3 ql]);
+            Jout_near_gpu  = MREDM.functions.mvp_N(Jc_near_gpu,pfft_n);
+            G_J            = MREDM.functions.mvp_G(Jc_near_gpu,res);
+            Ec_near        = gather(Jout_near_gpu - G_J);
+        catch
+            gpu_flag       = 5;
+            Jc_near_gpu    = reshape(to_GPU(Jc_near,gpu_flag),[pfft_kernel_n1 pfft_kernel_n2 pfft_kernel_n3 ql]);
+            Jout_near_gpu  = MREDM.functions.mvp_N(Jc_near_gpu,pfft_n);
+            G_J            = MREDM.functions.mvp_G(Jc_near_gpu,res);
+            Ec_near        = gather(Jout_near_gpu - G_J);
+        end
         
         Ec_pfft                 = zeros(N_pfft_dofs,1);
         Ec_pfft(near_list_dofs) = Ec_near(idx_near_3D);
