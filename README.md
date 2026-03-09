@@ -89,5 +89,3 @@ This is an in-house electromagnetic simulator suite and it is intended for resea
 ## 📃 **License**
 
 MARIE is released under the **MIT License**. 
-Please cite the following publication when using this software in academic or commercial work:
-Giannakopoulos, Ilias I., et al. "An Open‐Source Software Toolbox for Rapid Radiofrequency Coil Design and Evaluation in MRI." Magnetic Resonance in Medicine (2026)
