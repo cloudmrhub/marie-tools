@@ -57,7 +57,12 @@ function [emc] = em_constants(B0,nucleus)
     elseif strcmpi(nucleus,'13C')          % Carbon-13
         emc.gamma0 = 10.705e6;             % Gyromagnetic ratio / (2*pi) [Hz/T] 
         emc.Ispin  = 1/2;                  % Nucleus spin
-        emc.Nproton  = 0.011 * 6.691e28;   % Nucleus density [1/m^3] 
+        emc.Nproton  = 0.011 * 6.691e28;   % Nucleus density [1/m^3]
+   
+    elseif strcmpi(nucleus,'7LI')          % Lithium-7
+        emc.gamma0 = 16.546e6;             % Gyromagnetic ratio / (2*pi) [Hz/T]
+        emc.Ispin  = 3/2;                  % Nucleus spin
+        emc.Nproton  = 0.925 * 6.691e28;   % Nucleus density [1/m^3]
     
     elseif strcmpi(nucleus,'15N')          % Nitrogen-15
         emc.gamma0 = -4.316e6;             % Gyromagnetic ratio / (2*pi) [Hz/T] 
