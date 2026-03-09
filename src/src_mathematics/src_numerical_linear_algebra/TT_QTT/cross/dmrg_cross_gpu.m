@@ -26,7 +26,7 @@ function [y]=dmrg_cross_gpu(d,n,fun,eps)
     r1=1;
     
     for iiii = 1:d
-        y{iiii} = gpuArray(y{iiii});
+        y{iiii} = (y{iiii});
     end
     
     for i=d:-1:2
@@ -77,7 +77,7 @@ function [y]=dmrg_cross_gpu(d,n,fun,eps)
           ind2(:, kron((1:ry(i+2))', ones(ry(i)*n(i)*n(i+1),1)))' ...      
           ]; 
     
-        score=gpuArray(elem(big_index));     
+        score=(elem(big_index));     
 
         score=reshape(score,[ry(i),n(i)*n(i+1)*ry(i+2)]);
         score=rmat{i}*score;
@@ -95,21 +95,21 @@ function [y]=dmrg_cross_gpu(d,n,fun,eps)
 
         if ( dir == 1 ) 
             v = v * s'; 
-            ur=gpuArray(randn(size(u,1),kickrank));
+            ur=(randn(size(u,1),kickrank));
             u=reort(u,ur);
             radd=size(u,2)-r;
             if ( radd > 0 )
-                vr=gpuArray(zeros(size(v,1),radd));
+                vr=(zeros(size(v,1),radd));
                 v=[v,vr];
             end
             r=r+radd;
         else
              u = u * s; 
-             vr=gpuArray(randn(size(v,1),kickrank));
+             vr=(randn(size(v,1),kickrank));
              v=reort(v,vr);
              radd=size(v,2)-r;
              if ( radd > 0 )
-                 ur=gpuArray(zeros(size(u,1),radd));
+                 ur=(zeros(size(u,1),radd));
                  u=[u,ur];
              end
              r=r+radd;
