@@ -32,7 +32,6 @@ function[Zbc_K] = assemble_coupling_matrices_voxels_K_x3(SIE_quads, VIE_quads, k
     end
     
     Zbc_K  = cell2mat(Zbc_Nt)*res^3;
-    Zbc_K  = gpuArray(Zbc_K);
     Zbc_K(ii) = Zbc_K;
     
 end
