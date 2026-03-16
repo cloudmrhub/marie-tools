@@ -1,4 +1,4 @@
-# **MARIE — Backend Tools**
+# **MARIE — Numerical Methods**
 
 Visit the [project page](https://cmr.cloudmrhub.com/apps/marie/) for more information about **MARIE**.
 
