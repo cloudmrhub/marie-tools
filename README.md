@@ -10,7 +10,7 @@ Visit the [project page](https://cmr.cloudmrhub.com/apps/marie/) for more inform
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `src_geometry/`           | Parsers for GMSH surface and wire coil formats|
 | `src_integral_equations/` | Implements all integral formulations: **WIE**, **SIE**, **VIE**, **WVIE**, **SVIE**, and **WSVIE**|
-| `src_solver/`             | Iterative solvers (**GMRES**) with support for **block-Jacobi** and **LU preconditioning**, GPU acceleration.|
+| `src_solver/`             | Iterative solvers (**GMRES**) with support for GPU acceleration.|
 | `src_mathematics/`        | Tensor decompositions (**SVD**, **Tucker**, **Tensor Train**) and **Adaptive Cross Approximation (ACA)** for matrix compression.|
 | `src_physics/`            | Computation of electromagnetic fields and SNR. Electronic simulator.|
 | `src_utils/`              | General utilities for file I/O, `.json` parsing, and data management.|
