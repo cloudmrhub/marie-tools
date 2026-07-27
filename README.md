@@ -82,7 +82,7 @@ This work is supported in part by **NIH K99 EB035163**, **NIH R01 EB036483**, an
 ---
 
 ## ⚠️ **Disclaimer**
-This is an in-house electromagnetic simulator suite and it is intended for research purposes. While every effort has been made to ensure its quality, the code may contain bugs. We do not assume responsibility for any errors or issues resulting from the software's use. We encourage users to contact the Cloud MR project team for any question and to report errors.
+This is an in-house electromagnetic simulator suite and it is intended for research purposes. While every effort has been made to ensure its quality, the code may contain bugs. We do not assume responsibility for any errors or issues resulting from the software's use. We encourage the users to provide feedback and report bugs and potential errors.
 
 ---
 
