@@ -26,7 +26,6 @@ Each runner is a self-contained script that performs geometry assembly, matrix c
 | `MARIE_runner.m` | Executes the full **WSVIE** simulation.                                                     |
 | `BASIS_runner.m` | Generates an **elcectromangetic basis**, **UISNR** or the **ideal current patterns**, and the **MRGF**|
 | `MRGF_runner.m`  | Runs the **MRGF-based reduced-order WSVIE** for faster simulations                 |
-| `TMD_runner.m`   | Performs **automated tuning, matching, decoupling, preamplifier decoupling, and detuning** optimization of receive, transmit, and transceive coils (and their combinations) based on pre-computed Y parameters with external solvers (co-simulation is also performed for MARIE and MRGF runners by default)|
 ---
 
 ### **3. 🗂 `data/` — Simulation Data**
@@ -77,7 +76,7 @@ doc/
 
 ## 💬 **Acknowledgments**
 
-This work is supported in part by **NIH K99 EB035163**, **NIH R01 EB036483**, and **NIH R01 EB024536**, and performed under the **Center for Advanced Imaging Innovation and Research (CAI²R)**, an NIH P41 National Center for Biomedical Imaging and Bioengineering (P41 EB017183).
+This work is supported in part by **NIH K99 EB035163**, **NIH R01 EB036483**, and **NIH R01 EB024536**, and performed under the **Center for Advanced Imaging Innovation and Research (CAI²R)**, an NIH P41 National Center for Biomedical Imaging and Bioengineering (P41 EB017183). 
 
 ---
 
